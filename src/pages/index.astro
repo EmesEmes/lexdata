@@ -1,26 +1,117 @@
 ---
 // import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Banner from "../components/Banner.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<div class="container mx-auto">
-		<div class="flex items-center justify-between p-6">
-			<div class="flex gap-8">
-				<div>
-					<img src="/x.svg" alt="x icon" class="w-10"/>
-				</div>
-				<div>
-					<img src="/wp.svg" alt="whatsapp icon" class="w-10">
-				</div>
-			</div>
-			<div>
-				<img src="/lexdata-logo.svg" alt="lexdata logo" class="w-2xs">
-			</div>
-		</div>
-	</div>
+  <div class="container mx-auto p-6">
+    <div class="flex items-center justify-between">
+      <div class="flex gap-8">
+        <div>
+          <img src="/x.svg" alt="x icon" class="w-10" />
+        </div>
+        <div>
+          <img src="/wp.svg" alt="whatsapp icon" class="w-10" />
+        </div>
+      </div>
+      <div>
+        <img src="/lexdata-logo.svg" alt="lexdata logo" class="w-2xs" />
+      </div>
+    </div>
+    <div class="mt-10">
+      <img src="/images/columns.webp" alt="columns image" />
+    </div>
 
+    <main class="mt-10 w-[70%] mx-auto">
+      <div class="w-full text-center">
+        <h1
+          class="flex justify-between text-4xl uppercase text-gray tracking-[0.15em] w-full mx-auto"
+        >
+          <span>T</span>
+          <span>U</span>
+          <span class="ml-4">A</span>
+          <span>L</span>
+          <span>I</span>
+          <span>A</span>
+          <span>D</span>
+          <span>O</span>
+          <span class="ml-4">E</span>
+          <span>S</span>
+          <span>T</span>
+          <span>R</span>
+          <span>A</span>
+          <span>T</span>
+          <span>É</span>
+          <span>G</span>
+          <span>I</span>
+          <span>C</span>
+          <span>O</span>
+        </h1>
+        <h2
+          class="flex justify-between text-sm uppercase tracking-[0.25em] text-gray w-full mx-auto"
+        >
+          <span>E</span>
+          <span>N</span>
+          <span class="ml-2">S</span>
+          <span>O</span>
+          <span>L</span>
+          <span>U</span>
+          <span>C</span>
+          <span>I</span>
+          <span>O</span>
+          <span>N</span>
+          <span>E</span>
+          <span>S</span>
+
+          <span class="ml-2">J</span>
+          <span>U</span>
+          <span>R</span>
+          <span>Í</span>
+          <span>D</span>
+          <span>I</span>
+          <span>C</span>
+          <span>A</span>
+          <span>S</span>
+
+          <span class="ml-2">I</span>
+          <span>N</span>
+          <span>T</span>
+          <span>E</span>
+          <span>G</span>
+          <span>R</span>
+          <span>A</span>
+          <span>L</span>
+          <span>E</span>
+          <span>S</span>
+        </h2>
+      </div>
+      <div
+        class="mt-12 border-l-[6px] border-[#98A97C] pl-6 max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed"
+      >
+        <p>
+          Lexdata Services es una firma ecuatoriana de consultoría legal,
+          concebida para la era digital.
+        </p>
+        <p>
+          Ofrecemos soluciones jurídicas especializadas y de alto valor en las
+          áreas inmobiliaria, notarial, municipal y registral. Brindamos
+          asesoría experta y patrocinio legal para la formalización de
+          escrituras públicas, adaptándonos a las necesidades de un mercado
+          dinámico y globalizado.
+        </p>
+        <p>
+          Con Lexdata Services, accedes a un servicio personalizado y eficiente.
+          Simplificamos tus trámites, coordinando cada paso con precisión y
+          puntualidad. Te liberamos de todas las filas y resolvemos cualquier
+          complicación y al concluir exitosamente tus gestiones te hacemos
+          llegar tus documentos a cualquier parte de Ecuador o del mundo.
+        </p>
+      </div>
+    </main>
+  </div>
+	<Banner />
 </Layout>
