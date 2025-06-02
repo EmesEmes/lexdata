@@ -11,10 +11,11 @@ import Sidebar from "../components/Sidebar"
 		<meta name="generator" content={Astro.generator} />
 		<title>Lex Data</title>
 	</head>
-	<body class="bg-primary-background">
+	<body class="bg-primary-background overflow-x-hidden">
 		
 		<Sidebar client:only="react"/>
 		<slot />
+		
 	</body>
 </html>
 

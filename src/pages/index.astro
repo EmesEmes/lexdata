@@ -1,6 +1,7 @@
 ---
 // import Welcome from '../components/Welcome.astro';
 import Banner from "../components/Banner.astro";
+import BottomBanner from "../components/BottomBanner.astro";
 import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -56,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
         >
           <span>E</span>
           <span>N</span>
-          <span class="ml-2">S</span>
+          <span class="ml-4">S</span>
           <span>O</span>
           <span>L</span>
           <span>U</span>
@@ -67,7 +68,7 @@ import Layout from "../layouts/Layout.astro";
           <span>E</span>
           <span>S</span>
 
-          <span class="ml-2">J</span>
+          <span class="ml-4">J</span>
           <span>U</span>
           <span>R</span>
           <span>Í</span>
@@ -113,5 +114,121 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </main>
   </div>
-	<Banner />
+  <Banner image={"lawyers.webp"} />
+  <section class="mt-10">
+    <div class="container mx-auto">
+      <div class="w-[70%] mx-auto">
+        <h3 class="text-4xl text-gray uppercase">Misión</h3>
+        <p class="text-gray mt-2">
+          ¿Buscas seguridad y tranquilidad en la toma de decisiones jurídicas?
+        </p>
+        <p class="mt-10 text-gray">
+          En Lexdata Services, nuestra misión es brindarte la seguridad jurídica
+          que necesitas para tomar decisiones informadas y estratégicas.
+          Combinamos un profundo conocimiento del derecho con una red de
+          relaciones sólidas, ofrecemos soluciones innovadoras, ágiles y
+          eficientes, diseñadas para satisfacer tus requerimientos específicos.
+        </p>
+      </div>
+    </div>
+    <div class="mt-10 bg-secondary-background w-[70%] ml-auto p-6">
+      <div class="w-[75%] leading-6">
+        <p class="mb-4 font-bold">Nuestra especialización abarca:</p>
+        <ul class="list-disc flex flex-col gap-4">
+          <li class="text-black/50">
+            <span class="font-bold text-black">Bienes Raices: </span>Aseguramos
+            la rentabilidad y la legalidad de tus inversiones inmobiliarias
+            mediante una gestión integral y experta.
+          </li>
+          <li class="text-black/50">
+            <span class="font-bold text-black"
+              >Mandatos y Poderes:
+            </span>Protegemos tus intereses y garantizamos el cumplimiento de
+            tus voluntades, brindando asesoría legal precisa y confiable.
+          </li>
+          <li class="text-black/50">
+            <span class="font-bold text-black">Derecho de Familia: </span>Te
+            acompañamos con sensibilidad y profesionalismo en la resolución de
+            conflictos familiares. Para tus viajes gestionamos los permisos de
+            salida de tus hijos menores, priorizando el bienestar de tu familia.
+          </li>
+          <li class="text-black/50">
+            <span class="font-bold text-black">Derecho Societario: </span>Te
+            asesoramos con claridad sobre modelos de negocios y patrocinamos la
+            estructura societaria que mejor se ajuste a tus necesidades, sea
+            esta una compañía limitada, anónima o una sociedad civil y
+            comercial.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <Banner image={"catalejo.webp"} />
+  <section class="mt-10">
+    <div class="container mx-auto">
+      <div class="w-[70%] mx-auto">
+        <h3 class="text-4xl text-gray uppercase">Visión</h3>
+        <p class="text-gray mt-2">
+          En un mundo en constante evolución impulsado por las tecnologías de la
+          información, Lexdata Services se posiciona como tu aliado estratégico.
+          Nuestra meta es facilitar la instrumentación jurídica, ágil, eficiente
+          y eficaz de tus negocios en este nuevo escenario.
+        </p>
+      </div>
+    </div>
+    <div class="container mx-auto mt-10">
+      <div class="w-[70%] mx-auto">
+        <div class="flex items-center">
+          <div
+            class="border-l-8 border-l-olive p-4 w-[30%] flex flex-col items-end text-4xl text-olive"
+          >
+            <!-- <p class="text-olive text-6xl text-left">¿Qué nos diferencia?</p> -->
+            <div>¿QUÉ</div>
+            <div>NOS</div>
+            <div>DIFERENCIA?</div>
+          </div>
+          <hr class="border-t-3 border-dotted w-26 rotate-90" />
+          <div class="w-[50%]">
+            <p class="leading-relaxed">
+              En Lexdata Services, integramos la experiencia jurídica
+              tradicional con soluciones tecnológicas avanzadas, ofreciendo un
+              servicio personalizado y optimizado, garantizando la máxima
+              seguridad y eficiencia en todas tus operaciones.
+            </p>
+          </div>
+        </div>
+        <div class="p-4 bg-olive relative">
+          <p class="text-white text-4xl h-auto">
+            ¡Confía en Lexdata Services y asegura tu éxito en la era digital con
+            un soporte tradicional!
+          </p>
+          <div class="absolute top-0 left-full w-screen bg-olive inset-0 ">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <BottomBanner />
+
+  <section class="container mx-auto mt-20">
+    <div class="w-[70%] mx-auto">
+      <div class="flex items-center">
+        <div class="w-1/2">
+          <p class="text-4xl text-left">
+            Contáctenos hoy mismo para programar una consulta inicial gratuita.
+          </p>
+        </div>
+        <hr class="border-t-4 border-dotted w-40 rotate-90">
+        <div class="w-1/2 flex flex-col justify-between gap-y-6">
+          <p class="text-olive text-2xl">593-987654321</p>
+          <p class="text-olive text-2xl">consultas@lexdata.com</p>
+          <div class="flex gap-x-4">
+            <img src="/x.svg" alt="x icon">
+            <img src="/wp.svg" alt="whatsapp icon">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
