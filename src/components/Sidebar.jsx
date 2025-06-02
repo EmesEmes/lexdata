@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import { Home, Menu, MessageSquare, Phone, Globe } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Home, Menu, MessageSquare, Phone } from 'lucide-react';
 
 const Sidebar = () => {
   const [activeItem, setActiveItem] = useState('home');
   const [isExpanded, setIsExpanded] = useState(false);
+  const submenuRef = useRef(null);
 
   const menuItems = [
     { id: 'home', href: '/', icon: Home, label: 'HOME', labelEs: 'INICIO' },
     { id: 'menu', icon: Menu, label: 'MENU', labelEs: 'MENÚ' },
-    { id: 'chat', href: '/chat',icon: MessageSquare, label: 'CHAT', labelEs: 'CHAT' },
+    { id: 'chat', href: '/chat', icon: MessageSquare, label: 'CHAT', labelEs: 'CHAT' },
     { id: 'contact', href: '/contact', icon: Phone, label: 'CONTACT', labelEs: 'CONTACTO' }
   ];
 
@@ -19,6 +20,25 @@ const Sidebar = () => {
     'SALIDAS MENORES',
     'ESCRITURAS ELECTRÓNICAS'
   ];
+
+  // Detectar clics fuera del submenu
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (submenuRef.current && !submenuRef.current.contains(event.target)) {
+        setIsExpanded(false);
+      }
+    };
+
+    if (isExpanded) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isExpanded]);
 
   return (
     <div className="flex">
@@ -36,35 +56,50 @@ const Sidebar = () => {
           {menuItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
-            
+
+            if (item.id === 'menu') {
+              return (
+                <div key={item.id}>
+                  <button
+                    onClick={() => {
+                      setActiveItem(item.id);
+                      setIsExpanded(!isExpanded);
+                    }}
+                    className={`w-full h-16 flex flex-col items-center justify-center transition-all duration-200 hover:bg-stone-300 ${
+                      isActive ? 'bg-emerald-100 border-r-2 border-emerald-600' : ''
+                    }`}
+                  >
+                    <Icon
+                      size={20}
+                      className={`mb-1 ${isActive ? 'text-emerald-600' : 'text-stone-600'}`}
+                    />
+                    <span className={`text-xs font-medium ${isActive ? 'text-emerald-600' : 'text-stone-600'}`}>
+                      {item.label}
+                    </span>
+                  </button>
+                </div>
+              );
+            }
+
             return (
-              <a href={`${item.href}`} key={item.id}>
+              <a href={item.href} key={item.id}>
                 <button
-                
-                onClick={() => {
-                  setActiveItem(item.id);
-                  if (item.id === 'menu') {
-                    setIsExpanded(!isExpanded);
-                  } else {
+                  onClick={() => {
+                    setActiveItem(item.id);
                     setIsExpanded(false);
-                  }
-                }}
-                className={`w-full h-16 flex flex-col items-center justify-center transition-all duration-200 hover:bg-stone-300 ${
-                  isActive ? 'bg-emerald-100 border-r-2 border-emerald-600' : ''
-                }`}
-              >
-                <Icon 
-                  size={20} 
-                  className={`mb-1 ${
-                    isActive ? 'text-emerald-600' : 'text-stone-600'
-                  }`} 
-                />
-                <span className={`text-xs font-medium ${
-                  isActive ? 'text-emerald-600' : 'text-stone-600'
-                }`}>
-                  {item.label}
-                </span>
-              </button>
+                  }}
+                  className={`w-full h-16 flex flex-col items-center justify-center transition-all duration-200 hover:bg-stone-300 ${
+                    isActive ? 'bg-emerald-100 border-r-2 border-emerald-600' : ''
+                  }`}
+                >
+                  <Icon
+                    size={20}
+                    className={`mb-1 ${isActive ? 'text-emerald-600' : 'text-stone-600'}`}
+                  />
+                  <span className={`text-xs font-medium ${isActive ? 'text-emerald-600' : 'text-stone-600'}`}>
+                    {item.label}
+                  </span>
+                </button>
               </a>
             );
           })}
@@ -86,17 +121,20 @@ const Sidebar = () => {
       </div>
 
       {/* Submenu expandido */}
-      <div className={`fixed left-20 top-1/2 -translate-y-1/2 bg-secondary-background shadow-lg transition-all duration-300 z-40 ${
-        isExpanded ? 'w-80' : 'w-0'
-      } overflow-hidden`}>
-        <div className="p-6 ">
+      <div
+        ref={submenuRef}
+        className={`fixed left-20 top-1/2 -translate-y-1/2 bg-secondary-background shadow-lg transition-all duration-300 z-40 ${
+          isExpanded ? 'w-80' : 'w-0'
+        } overflow-hidden`}
+      >
+        <div className="p-6">
           <div className="space-y-3">
             {submenuItems.map((item, index) => (
               <button
                 key={index}
                 className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 hover:border-amber-400 hover:shadow-md ${
-                  item === 'SALIDAS MENORES' 
-                    ? 'border-amber-400 bg-amber-50 text-emerald-700 font-semibold' 
+                  item === 'SALIDAS MENORES'
+                    ? 'border-amber-400 bg-amber-50 text-emerald-700 font-semibold'
                     : 'border-amber-200 bg-stone-50 text-stone-700 hover:bg-amber-50'
                 }`}
               >
@@ -107,11 +145,9 @@ const Sidebar = () => {
         </div>
       </div>
 
-            
-
-      {/* Overlay para cerrar menú en móvil */}
+      {/* Overlay en móvil */}
       {isExpanded && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-20 z-30 lg:hidden"
           onClick={() => setIsExpanded(false)}
         />
