@@ -1,37 +1,46 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
-import Sidebar from "../components/Sidebar"
-const {title} = Astro.props
+import Sidebar from "../components/Sidebar";
+import MobileMenu from "../components/MobileMenu"
+import Footer from "../components/Footer.astro";
+const { title } = Astro.props;
+
 ---
+
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-primary-background overflow-x-hidden">
-		<div class="container mx-auto p-6">
-    <div class="flex items-center justify-between">
-      <div class="flex gap-8">
-        <div>
-          <img src="/x.svg" alt="x icon" class="w-10" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body class="bg-primary-background overflow-x-hidden">
+    <div class="hidden md:block container mx-auto p-6">
+      <div class="flex items-center justify-between">
+        <div class="flex gap-8">
+          <div>
+            <img src="/x.svg" alt="x icon" class="w-10" />
+          </div>
+          <div>
+            <img src="/wp.svg" alt="whatsapp icon" class="w-10" />
+          </div>
         </div>
         <div>
-          <img src="/wp.svg" alt="whatsapp icon" class="w-10" />
+          <img src="/lexdata-logo.svg" alt="lexdata logo" class="w-2xs" />
         </div>
-      </div>
-      <div>
-        <img src="/lexdata-logo.svg" alt="lexdata logo" class="w-2xs" />
       </div>
     </div>
-		</div>
-		<Sidebar client:only="react"/>
-		<slot />
-		
-	</body>
+    <div>
+      <MobileMenu client:only="react"/>
+    </div>
+    <div class="max-md:hidden">
+      <Sidebar client:only="react" />
+    </div>
+    <slot />
+    <Footer />
+  </body>
 </html>
-
-

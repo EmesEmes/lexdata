@@ -14,8 +14,8 @@ import Layout from "../layouts/Layout.astro";
       <img src="/images/columns.webp" alt="columns image" />
     </div>
 
-    <main class="mt-10 w-[70%] mx-auto">
-      <div class="w-full text-center">
+    <main class="mt-10 md:w-[70%] mx-auto w-screen p-4">
+      <div class="w-full text-center max-md:hidden">
         <h1
           class="flex justify-between text-4xl uppercase text-gray tracking-[0.15em] w-full mx-auto"
         >
@@ -77,6 +77,10 @@ import Layout from "../layouts/Layout.astro";
           <span>S</span>
         </h2>
       </div>
+      <div class="text-center uppercase text-3xl text-gray md:hidden">
+        <h2>Tu aliado estratégico</h2>
+        <h3>En solucione jurídicas</h3>
+      </div>
       <div
         class="mt-12 border-l-[6px] border-[#98A97C] pl-6 max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed"
       >
@@ -104,7 +108,7 @@ import Layout from "../layouts/Layout.astro";
   <Banner image={"lawyers.webp"} />
   <section class="mt-10">
     <div class="container mx-auto">
-      <div class="w-[70%] mx-auto">
+      <div class="p-4 md:w-[70%] md:mx-auto">
         <h3 class="text-4xl text-gray uppercase">Misión</h3>
         <p class="text-gray mt-2">
           ¿Buscas seguridad y tranquilidad en la toma de decisiones jurídicas?
@@ -118,7 +122,7 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
     </div>
-    <div class="mt-10 bg-secondary-background w-[70%] ml-auto p-6">
+    <div class="mt-10 bg-secondary-background md:w-[70%] w-[90%] ml-auto p-6">
       <div class="w-[75%] leading-6">
         <p class="mb-4 font-bold">Nuestra especialización abarca:</p>
         <ul class="list-disc flex flex-col gap-4">
@@ -153,7 +157,7 @@ import Layout from "../layouts/Layout.astro";
   <Banner image={"catalejo.webp"} />
   <section class="mt-10">
     <div class="container mx-auto">
-      <div class="w-[70%] mx-auto">
+      <div class="w-screen p-6 md:w-[70%] md:mx-auto md:p-0">
         <h3 class="text-4xl text-gray uppercase">Visión</h3>
         <p class="text-gray mt-2">
           En un mundo en constante evolución impulsado por las tecnologías de la
@@ -164,18 +168,17 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <div class="container mx-auto mt-10">
-      <div class="w-[70%] mx-auto">
-        <div class="flex items-center">
+      <div class="w-[70%] mx-auto max-md:w-screen max-md:p-4">
+        <div class="flex flex-col md:flex-row items-center">
           <div
-            class="border-l-8 border-l-olive p-4 w-[30%] flex flex-col items-end text-4xl text-olive"
+            class="border-l-8 border-l-olive p-4 md:w-[30%] w-screen flex flex-col items-end text-4xl text-olive"
           >
-            <!-- <p class="text-olive text-6xl text-left">¿Qué nos diferencia?</p> -->
             <div>¿QUÉ</div>
             <div>NOS</div>
             <div>DIFERENCIA?</div>
           </div>
-          <hr class="border-t-3 border-dotted w-26 rotate-90" />
-          <div class="w-[50%]">
+          <hr class="border-t-3 border-dotted w-26 rotate-90 max-md:hidden" />
+          <div class="w-screen p-4 md:w-[50%] md:p-0">
             <p class="leading-relaxed">
               En Lexdata Services, integramos la experiencia jurídica
               tradicional con soluciones tecnológicas avanzadas, ofreciendo un
@@ -184,12 +187,12 @@ import Layout from "../layouts/Layout.astro";
             </p>
           </div>
         </div>
-        <div class="p-4 bg-olive relative">
+        <div class="p-4 rounded-2xl md:rounded-none bg-olive relative">
           <p class="text-white text-4xl h-auto">
             ¡Confía en Lexdata Services y asegura tu éxito en la era digital con
             un soporte tradicional!
           </p>
-          <div class="absolute top-0 left-full w-screen bg-olive inset-0 ">
+          <div class="hidden md:block absolute top-0 left-full w-screen bg-olive inset-0 ">
 
           </div>
         </div>
@@ -199,15 +202,15 @@ import Layout from "../layouts/Layout.astro";
   <BottomBanner />
 
   <section class="container mx-auto mt-20">
-    <div class="w-[70%] mx-auto">
-      <div class="flex items-center">
-        <div class="w-1/2">
+    <div class="mx-auto w-screen p-4 md:w-[70%] md:p-0">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 w-fit">
           <p class="text-4xl text-left">
             Contáctenos hoy mismo para programar una consulta inicial gratuita.
           </p>
         </div>
-        <hr class="border-t-4 border-dotted w-40 rotate-90">
-        <div class="w-1/2 flex flex-col justify-between gap-y-6">
+        <hr class="border-t-4 border-dotted w-40 rotate-90 max-md:hidden">
+        <div class="md:w-1/2 w-full flex flex-col items-center max-md:mt-6 justify-between gap-y-6">
           <p class="text-olive text-2xl">593-987654321</p>
           <p class="text-olive text-2xl">consultas@lexdata.com</p>
           <div class="flex gap-x-4">

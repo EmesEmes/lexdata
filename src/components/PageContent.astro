@@ -1,12 +1,25 @@
 ---
 const {requirements, steps, image, title } = Astro.props
+const translations = {
+  es: {
+    requirements: "Requisitos",
+    procedure: "Procedimiento"
+  },
+  en: {
+    requirements: "Requirements",
+    procedure: "Procedure"
+  }
+};
+
+const lang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
+const t = translations[lang];
 ---
 
 <section class="container mx-auto mt-10">
-  <div class="w-[70%] mx-auto flex items-end gap-1 p-4">
+  <div class="md:w-[70%] mx-auto lg:flex lg:items-end gap-1 p-4">
     <div class="h-auto">
       <p
-        class="writing-vertical text-gray text-6xl tracking-[1remrem] uppercase rotate-180"
+        class="lg:writing-vertical text-gray text-2xl lg:text-6xl tracking-[1rem] uppercase md:rotate-180"
         set:html={title}
       />
     </div>
@@ -20,10 +33,10 @@ const {requirements, steps, image, title } = Astro.props
     </div>
   </div>
   <slot />
-  <div class="w-[70%] mx-auto grid grid-cols-2 mt-10">
+  <div class="mt-10 p-4 lg:w-[70%] lg:mx-auto lg:grid lg:grid-cols-2 lg:p-0">
     <div class="p-4">
-      <p class="text-3xl text-gray text-right">Requisitos</p>
-      <ul class="list-disc mt-4 text-gray text-right">
+      <p class="text-3xl text-gray lg:text-right">{t.requirements}</p>
+      <ul class="list-disc mt-4 text-gray lg:text-right">
         {
           requirements.map((requirement: string) => (
             <li>
@@ -34,7 +47,7 @@ const {requirements, steps, image, title } = Astro.props
       </ul>
     </div>
     <div class="p-4 border-l-2 border-dotted ml-4">
-      <p class="text-3xl text-gray text-left pl-6">Procedimiento</p>
+      <p class="text-3xl text-gray text-left pl-6">{t.procedure}</p>
       <ul class="list-disc mt-4 text-gray text-left pl-6">
         {
           steps.map((step: string) => (
