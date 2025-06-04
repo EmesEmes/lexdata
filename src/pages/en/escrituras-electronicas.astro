@@ -1,0 +1,33 @@
+---
+import BottomBanner from "../../components/BottomBanner.astro";
+import PageContent from "../../components/PageContent.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const requirements = [
+  "Identification documents of those requesting the service.",
+  "One of the parties must be physically located in the same canton as the notary with whom the document will be coordinated.",
+  "All parties must possess electronic signatures that are valid in the FIRMAEC system of Ecuador.",
+  "There are specific requirements depending on the type of procedure."
+]
+
+const steps = [
+  "Contact Lexdata Services — we will advise and even train you in everything needed to process your request.",
+  "f you do not have an electronic signature, we will connect you with all authorized providers in Ecuador to obtain one.",
+  "Our legal team will sponsor your request in compliance with Ecuadorian legislation and your specific needs.",
+  "We coordinate with notaries who specialize in remote, digital, and electronic services.",
+  "Once the electronic deed is obtained, if you also need it in physical format, we will coordinate delivery in paper form.",
+]
+
+---
+
+<Layout>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title=`Electronic<br/>deeds`>
+    <div class="container mx-auto mt-10">
+    <div class="w-[70%] mx-auto flex flex-col gap-6">
+      <p class="font-bold">One of the most important divisions of Lexdata Services is the one that sponsors the granting of public deeds through remote appearance and electronic signatures. </p>
+      <p class="font-bold">The clients who most frequently require this service are those who are abroad, and the most common acts are powers of attorney — in their general, special, or judicial forms. Of course, this method also allows all types of property transfers, such as purchase/sale, donations, etc., making this an innovative process in which we are pioneers.</p>
+    </div>
+  </div>
+  </PageContent>
+  <BottomBanner />
+</Layout>

@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageContent from "../../components/PageContent.astro"
+import BottomBanner from "../../components/BottomBanner.astro";
+
+const requirements =[
+  "Identification documents of the parents and the minors."
+]
+
+const steps = [
+  "Contact Lexdata Services for comprehensive advice to securely obtain the authorization for your minor children's departure from the country.",
+  "Our legal team drafts your request in accordance with Ecuadorian legislation and your specific requirements.",
+  "Coordinates with specialized notaries for the granting of the notarial act authorizing the minor's departure.",
+  "Delivers your documents to the location of your choice."
+]
+---
+
+<Layout>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title=`minor's exit<br/>permits`/>
+</Layout>
+<BottomBanner />

@@ -1,0 +1,45 @@
+---
+import BottomBanner from "../../components/BottomBanner.astro";
+import PageContent from "../../components/PageContent.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const requirements = [
+  "Identification documents of the partner(s).",
+  "f the partner(s) are national companies, authorization from the board and appointment of the legal representative are required",
+  "If the partner(s) are foreign companies, a certificate of legal existence issued by the administrative body of the country of origin and a power of attorney in favor of the representative are required."
+]
+
+const steps = [
+  "Contact Lexdata Services for comprehensive advice to ensure your request is securely drafted.",
+  "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.",
+  "Coordinates with specialized notaries for the granting of the public deed.",
+  "Processes the registration in the Mercantile Registry of the company's domicile.",
+  "Delivers your documents to the location of your choice."
+]
+
+const requirementsSocieties = [
+  "Identification documents of at least two partners.",
+  "If the partners are national companies, authorization from the board and appointment of the legal representative are required.",
+  "If the partners are foreign companies, a certificate of legal existence issued by the administrative body of the country of origin and a power of attorney in favor of the representative are required."
+]
+
+const stepsSocieties = [
+  "Contact Lexdata Services for comprehensive advice to ensure your request is securely drafted.",
+  "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.",
+  "Coordinates the publication of the incorporation extract in a digital medium.",
+  "Coordinates the notarial approval of the company's incorporation.",
+  "Coordina la aprobación notarial de la constitución de la empresa.",
+  "Processes the registration in the Mercantile Registry of the company's domicile.",
+  "Delivers your documents to the location of your choice."
+]
+
+
+
+---
+
+<Layout>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title="incorporation of<br/>limited liability companies"/>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title="incorporation of<br/>corporations"/>
+  <PageContent requirements={requirementsSocieties} steps={stepsSocieties} image="salida-menores" title="incorporation of civil<br/>and commercial partnerships"/>
+  <BottomBanner />
+</Layout>

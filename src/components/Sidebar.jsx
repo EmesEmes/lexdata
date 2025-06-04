@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Home, Menu, MessageSquare, Phone } from 'lucide-react';
 
 const Sidebar = () => {
-  const [activeItem, setActiveItem] = useState('home');
+  const [activeItem, setActiveItem] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('es');
   const submenuRef = useRef(null);
 
   const menuItems = [
@@ -14,14 +15,80 @@ const Sidebar = () => {
   ];
 
   const submenuItems = [
-    {page: 'BIENES RAICES O INMOBILIARIO', href: '/bienes-raices-inmobiliario'},
-    {page: 'PODERES', href: '/poderes'},
-    {page: 'SOCIETARIO', href: '/societario'},
-    {page: 'SALIDAS MENORES', href: '/salida-de-menores'},
-    {page: 'ESCRITURAS ELECTRÓNICAS', href: '/escrituras-electronicas'}
+    {
+      page: 'BIENES RAICES O INMOBILIARIO',
+      pageEn: 'REAL ESTATE',
+      href: '/bienes-raices-inmobiliario'
+    },
+    {
+      page: 'PODERES',
+      pageEn: 'POWERS OF ATTORNEY',
+      href: '/poderes'
+    },
+    {
+      page: 'SOCIETARIO',
+      pageEn: 'CORPORATE',
+      href: '/societario'
+    },
+    {
+      page: 'SALIDAS MENORES',
+      pageEn: 'MINOR EXIT PERMITS',
+      href: '/salida-de-menores'
+    },
+    {
+      page: 'ESCRITURAS ELECTRÓNICAS',
+      pageEn: 'ELECTRONIC DEEDS',
+      href: '/escrituras-electronicas'
+    }
   ];
 
-  // Detectar clics fuera del submenu
+  // Detectar idioma actual por URL
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      setCurrentLanguage(path.startsWith('/en') ? 'en' : 'es');
+    }
+  }, []);
+
+  // Establecer ítem activo basado en URL (excepto MENU)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+
+      for (const item of menuItems) {
+        if (item.id !== 'menu') {
+          const localizedHref = getLocalizedHref(item);
+          if (path === localizedHref) {
+            setActiveItem(item.id);
+            break;
+          }
+        }
+      }
+    }
+  }, [currentLanguage]);
+
+  const toggleLanguage = () => {
+    if (typeof window !== 'undefined') {
+      const currentPath = window.location.pathname;
+      let newPath;
+
+      if (currentLanguage === 'es') {
+        newPath = '/en' + currentPath;
+        setCurrentLanguage('en');
+      } else {
+        newPath = currentPath.replace('/en', '') || '/';
+        setCurrentLanguage('es');
+      }
+
+      window.location.href = newPath;
+    }
+  };
+
+  const getLocalizedHref = (item) => {
+    return currentLanguage === 'en' ? '/en' + item.href : item.href;
+  };
+
+  // Cierre de submenú al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (submenuRef.current && !submenuRef.current.contains(event.target)) {
@@ -31,8 +98,6 @@ const Sidebar = () => {
 
     if (isExpanded) {
       document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
@@ -42,20 +107,27 @@ const Sidebar = () => {
 
   return (
     <div className="flex">
-      {/* Sidebar principal */}
+      {/* Sidebar */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 w-20 bg-secondary-background shadow-lg z-50 flex flex-col rounded-lg">
-        {/* Logo */}
         <div className="h-16 flex items-center justify-center border-b border-stone-300">
-          <div className="w-10 h-10 flex items-center justify-center shadow-sm">
-            <img src="/favicon.svg" alt="icono lexdata" />
+          <div className="w-10 h-10 flex items-center justify-center">
+            <img src="/favicon.svg" alt="logo lexdata" />
           </div>
         </div>
 
-        {/* Menu Items */}
         <div className="flex-1 py-4">
           {menuItems.map((item) => {
             const Icon = item.icon;
-            const isActive = activeItem === item.id;
+            const displayLabel = currentLanguage === 'es' ? item.labelEs : item.label;
+
+            let isActive = activeItem === item.id;
+            if (item.id !== 'menu' && typeof window !== 'undefined') {
+              const path = window.location.pathname;
+              const localizedHref = getLocalizedHref(item);
+              if (path === localizedHref) {
+                isActive = true;
+              }
+            }
 
             if (item.id === 'menu') {
               return (
@@ -69,12 +141,9 @@ const Sidebar = () => {
                       isActive ? 'bg-emerald-100 border-r-2 border-emerald-600' : ''
                     }`}
                   >
-                    <Icon
-                      size={20}
-                      className={`mb-1 ${isActive ? 'text-emerald-600' : 'text-stone-600'}`}
-                    />
+                    <Icon size={20} className={`mb-1 ${isActive ? 'text-emerald-600' : 'text-stone-600'}`} />
                     <span className={`text-xs font-medium ${isActive ? 'text-emerald-600' : 'text-stone-600'}`}>
-                      {item.label}
+                      {displayLabel}
                     </span>
                   </button>
                 </div>
@@ -82,7 +151,7 @@ const Sidebar = () => {
             }
 
             return (
-              <a href={item.href} key={item.id}>
+              <a href={getLocalizedHref(item)} key={item.id}>
                 <button
                   onClick={() => {
                     setActiveItem(item.id);
@@ -92,12 +161,9 @@ const Sidebar = () => {
                     isActive ? 'bg-emerald-100 border-r-2 border-emerald-600' : ''
                   }`}
                 >
-                  <Icon
-                    size={20}
-                    className={`mb-1 ${isActive ? 'text-emerald-600' : 'text-stone-600'}`}
-                  />
+                  <Icon size={20} className={`mb-1 ${isActive ? 'text-emerald-600' : 'text-stone-600'}`} />
                   <span className={`text-xs font-medium ${isActive ? 'text-emerald-600' : 'text-stone-600'}`}>
-                    {item.label}
+                    {displayLabel}
                   </span>
                 </button>
               </a>
@@ -105,50 +171,45 @@ const Sidebar = () => {
           })}
         </div>
 
-        {/* Language Toggle */}
         <div className="border-t border-stone-300 p-2">
           <div className="flex flex-col space-y-2">
-            <button className="flex items-center justify-center p-2 rounded hover:bg-stone-300 transition-colors">
-              <div className="w-6 h-4 bg-red-500 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-4 h-0.5 bg-yellow-400"></div>
-                </div>
-              </div>
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center justify-center p-2 rounded hover:bg-stone-300 transition-colors"
+              title={currentLanguage === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish'}
+            >
+              <span className="text-3xl">{currentLanguage === 'es' ? '🇪🇸' : '🇺🇸'}</span>
             </button>
-            <span className="text-xs text-stone-600 text-center">ESP</span>
+            <span className="text-xs text-stone-600 text-center font-medium">
+              {currentLanguage === 'es' ? 'ESP' : 'ENG'}
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Submenu expandido */}
+      {/* Submenú */}
       <div
         ref={submenuRef}
-        className={`fixed left-20 top-1/2 -translate-y-1/2 bg-secondary-background shadow-lg transition-all duration-300 z-40 ${
+        className={`fixed left-20 top-1/2 -translate-y-1/2 bg-gray-100 shadow-lg transition-all duration-300 z-40 rounded-r-lg ${
           isExpanded ? 'w-80' : 'w-0'
         } overflow-hidden`}
       >
         <div className="p-6">
           <div className="space-y-3">
             {submenuItems.map((item, index) => (
-              <a href={item.href}>
-                <button
-                key={index}
-                className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 hover:border-amber-400 hover:shadow-md 'border-amber-400 bg-amber-50 text-emerald-700 font-semibold`}
-              >
-                {item.page}
-              </button>
+              <a href={currentLanguage === 'es' ? item.href : '/en' + item.href} key={index}>
+                <button className="w-full text-left p-4 rounded-lg border-2 transition-all duration-200 hover:border-amber-400 hover:shadow-md border-amber-400 bg-amber-50 text-emerald-700 font-semibold">
+                  {currentLanguage === 'es' ? item.page : item.pageEn}
+                </button>
               </a>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Overlay en móvil */}
+      {/* Overlay */}
       {isExpanded && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-20 z-30 lg:hidden"
-          onClick={() => setIsExpanded(false)}
-        />
+        <div className="fixed inset-0 bg-black bg-opacity-20 z-30 lg:hidden" onClick={() => setIsExpanded(false)} />
       )}
     </div>
   );

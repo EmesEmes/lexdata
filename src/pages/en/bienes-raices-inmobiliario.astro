@@ -1,0 +1,86 @@
+---
+import BottomBanner from "../../components/BottomBanner.astro";
+import PageContent from "../../components/PageContent.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const requirementsTrading = [
+  "Certificate of encumbrances issued by the Property Registry of the canton where the property is located.",
+  "Updated property tax payment and/or cadastral file of the property.",
+  "Payment of transfer taxes, capital gains, works, and other additional taxes according to the canton where the property is located.",
+  "Identification documents of the parties involved.",
+  "Requirements may increase depending on specific case particulars."
+]
+
+const stepsTrading =[
+  "Contact Lexdata Services for comprehensive advice to ensure your real estate transaction is secure.",
+  "Lexdata Services reviews and systematically organizes all documentation.",
+  "Executes the cadastral process in the relevant Municipality and coordinates the payment of all taxes.",
+  "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.",
+  "Coordinates with specialized notaries for the granting of the public deed.",
+  "Processes the registration in the Property Registry.",
+  "Delivers your documents to the location of your choice."
+]
+
+const requirementsTradingPromise =[
+  "Certificate of encumbrances issued by the Property Registry of the canton where the property is located.",
+  "Updated property tax payment and/or cadastral file of the property.",
+  "Identification documents of the parties involved.",
+  "Requirements may increase depending on specific case particulars.",
+  "Note: The certificate of encumbrances and property tax may be optional depending on specific cases."
+]
+
+const stepsTradingPromise = [
+  "Contact Lexdata Services for comprehensive advice to ensure your promise of sale transaction is secure.",
+  "Lexdata Services reviews and systematically organizes all documentation.",
+  "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.",
+  "Coordinates with specialized notaries for the granting of the public deed.",
+  "Delivers your documents to the location of your choice."
+]
+
+const requirementsDonation= [
+  "Donation insinuation granted at a Notary.",
+  "Certificate of encumbrances issued by the Property Registry of the canton where the property is located.",
+  "Updated property tax payment and/or cadastral file of the property.",
+  "Payment of transfer taxes, capital gains, works, and other additional taxes according to the canton where the property is located.",
+  "Identification documents of the parties involved.",
+  "Requirements may increase depending on specific case particulars.",
+]
+
+const stepsDonation = [
+  "Contact Lexdata Services for comprehensive advice to ensure your property donation is secure.",
+  "Lexdata Services reviews and systematically organizes all documentation",
+  "Executes the cadastral process in the relevant Municipality and coordinates the payment of all taxes.",
+  "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.", 
+  "Coordinates with specialized notaries for the granting of the public deed.",
+  "Coordinates the declaration of donation taxes before the Internal Revenue Service.",
+  "Processes the registration in the Property Registry.",
+  "Delivers your documents to the location of your choice.",
+] 
+
+const requirementsPartition = [
+  "Certificate of encumbrances for the properties to be partitioned and adjudicated, issued by the Property Registries of the cantons where they are located.",
+  "Updated property tax payments and/or cadastral files of the properties.",
+  "Payment of transfer taxes, capital gains, works, and other additional taxes according to the canton where the property is located.",
+  "Identification documents of the parties involved.",
+  "Requirements may increase depending on specific case particulars."
+]
+
+const stepsPartition = [
+  "Contact Lexdata Services for comprehensive advice to ensure your property partition and adjudication process is secure.",
+  "Lexdata Services reviews and systematically organizes all documentation.",
+  "Executes the cadastral process in the relevant Municipality and coordinates the payment of all taxes.",
+  "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.",
+  "Coordinates with specialized notaries for the granting of the public deed.",
+  "Processes the registration in the Property Registry.",
+  "Delivers your documents to the location of your choice."
+]
+
+---
+
+<Layout title="Real State | Lexdata">
+  <PageContent requirements={requirementsTrading} steps={stepsTrading} image="salida-menores" title=`purchase </br> and sale`/>
+  <PageContent requirements={requirementsTradingPromise} steps={stepsTradingPromise} image="salida-menores" title=`promise </br> of sale`/>
+  <PageContent requirements={requirementsDonation} steps={stepsDonation} image="salida-menores" title=`donation`/>
+  <PageContent requirements={requirementsPartition} steps={stepsPartition} image="salida-menores" title=`partition and <br/> adjudication`/>
+  <BottomBanner/>
+</Layout>
