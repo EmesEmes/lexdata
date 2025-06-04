@@ -1,0 +1,50 @@
+---
+const {requirements, steps, image, title } = Astro.props
+---
+
+<section class="container mx-auto mt-10">
+  <div class="w-[70%] mx-auto flex items-end gap-1 p-4">
+    <div class="h-auto">
+      <p
+        class="writing-vertical text-gray text-6xl tracking-[1remrem] uppercase rotate-180"
+        set:html={title}
+      />
+    </div>
+
+    <div>
+      <img
+        src=`/images/${image}.webp`
+        alt="salidas menores"
+        class="max-w-full h-auto object-cover"
+      />
+    </div>
+  </div>
+  <slot />
+  <div class="w-[70%] mx-auto grid grid-cols-2 mt-10">
+    <div class="p-4">
+      <p class="text-3xl text-gray text-right">Requisitos</p>
+      <ul class="list-disc mt-4 text-gray text-right">
+        {
+          requirements.map((requirement: string) => (
+            <li>
+              <p>{requirement}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="p-4 border-l-2 border-dotted ml-4">
+      <p class="text-3xl text-gray text-left pl-6">Procedimiento</p>
+      <ul class="list-disc mt-4 text-gray text-left pl-6">
+        {
+          steps.map((step: string) => (
+            <li>
+              <p>{step}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+

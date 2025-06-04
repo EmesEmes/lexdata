@@ -12,7 +12,21 @@ import Sidebar from "../components/Sidebar"
 		<title>Lex Data</title>
 	</head>
 	<body class="bg-primary-background overflow-x-hidden">
-		
+		<div class="container mx-auto p-6">
+    <div class="flex items-center justify-between">
+      <div class="flex gap-8">
+        <div>
+          <img src="/x.svg" alt="x icon" class="w-10" />
+        </div>
+        <div>
+          <img src="/wp.svg" alt="whatsapp icon" class="w-10" />
+        </div>
+      </div>
+      <div>
+        <img src="/lexdata-logo.svg" alt="lexdata logo" class="w-2xs" />
+      </div>
+    </div>
+		</div>
 		<Sidebar client:only="react"/>
 		<slot />
 		

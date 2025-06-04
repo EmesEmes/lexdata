@@ -1,0 +1,45 @@
+---
+import BottomBanner from "../components/BottomBanner.astro";
+import PageContent from "../components/PageContent.astro";
+import Layout from "../layouts/Layout.astro";
+
+const requirements = [
+  "Documentación de identificación del o los socios.",
+  "Si el o los socios son empresas nacionales se necesita la autorización de la junta y el nombramiento del representante legal.",
+  "Si el o los socios son empresas extranjeras se necesita el documento de existencia legal de la empresa otorgado por el órgano administrativo del país de origen y el poder a favor de la persona que ejercerá la representación."
+]
+
+const steps = [
+  "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu requerimiento sea proyectado de forma segura.",
+  "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del o los clientes.",
+  "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
+  "Procesa la inscripción en el Registro Mercantil del domicilio de la empresa.",
+  "Te entrega tus documentos en el lugar que elijas."
+]
+
+const requirementsSocieties = [
+  "Documentación de identificación de los socios, mínimo dos personas.",
+  "Si los socios son empresas nacionales se necesita la autorización de la junta y el nombramiento del representante legal.",
+  "Si los socios son empresas extranjeras se necesita el documento de existencia legal de la empresa otorgado por el órgano administrativo del país de origen y el poder a favor de la persona que ejercerá la representación."
+]
+
+const stepsSocieties = [
+  "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu requerimiento sea proyectado de forma segura.",
+  "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del o los clientes.",
+  "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
+  "Realiza la publicación del extracto de la constitución en un medio digital.",
+  "Coordina la aprobación notarial de la constitución de la empresa.",
+  "Procesa la inscripción en el Registro Mercantil del domicilio de la empresa.",
+  "Te entrega tus documentos en el lugar que elijas."
+]
+
+
+
+---
+
+<Layout>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title="constitución de<br/>compañias limitadas"/>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title="constitución de<br/>compañias anónimas"/>
+  <PageContent requirements={requirementsSocieties} steps={stepsSocieties} image="salida-menores" title="constitución de sociedades<br/>civiles y comerciales"/>
+  <BottomBanner />
+</Layout>

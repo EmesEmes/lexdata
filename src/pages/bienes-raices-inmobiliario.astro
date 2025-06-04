@@ -1,0 +1,84 @@
+---
+import PageContent from "../components/PageContent.astro";
+import Layout from "../layouts/Layout.astro";
+
+const requirementsTrading = [
+  "Certificado de gravámenes conferido por el Registro de la Propiedad del cantón donde está ubicado el inmueble.",
+  "Pago del impuesto predial actualizado y/o ficha catastral del inmueble.",
+  "Pagos de los impuestos de alcabalas, plusvalía, obras y demás adicionales conforme al cantón en donde se ubica el inmueble.",
+  "Documentación de identificación de las partes.",
+  "Los requisitos pueden aumentar en función a particularidades específicas de cada caso."
+]
+
+const stepsTrading =[
+  "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu negocio jurídico de compra o venta de inmuebles sea seguro.",
+  "Lexdata Services revisa toda la documentación y la organiza sistemáticamente.",
+  "Ejecuta el proceso de catastro en el Municipio pertinente y coordina el pago de todos los impuestos.",
+  "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del cliente.",
+  "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
+  "Procesa la inscripción en el Registro de la Propiedad.",
+  "Te entrega tus documentos en el lugar que elijas."
+]
+
+const requirementsTradingPromise =[
+  "Certificado de gravámenes conferido por el Registro de la Propiedad del cantón donde está ubicado el inmueble.",
+  "Pago del impuesto predial actualizado y/o ficha catastral del inmueble.",
+  "Documentación de identificación de las partes.",
+  "Los requisitos pueden aumentar en función a particularidades específicas de cada caso.",
+  "Nota: El certificado de gravámenes y el impuesto predial pueden ser opcionales dependiendo de casuísticas específicas."
+]
+
+const stepsTradingPromise = [
+  "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu negocio jurídico de promesa de compra o venta de inmuebles sea seguro.",
+  "Lexdata Services revisa toda la documentación y la organiza sistemáticamente.",
+  "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del cliente.",
+  "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
+  "Te entrega tus documentos en el lugar que elijas."
+]
+
+const requirementsDonation= [
+  "Insinuación de Donación otorgada en Notaría.",
+  "Certificado de gravámenes conferido por el Registro de la Propiedad del cantón donde está ubicado el inmueble.",
+  "Pago del impuesto predial actualizado y/o ficha catastral del inmueble.",
+  "Pagos de los impuestos de alcabalas, plusvalía, obras y demás adicionales conforme al cantón en donde se ubica el inmueble.",
+  "Documentación de identificación de las partes.",
+  "Los requisitos pueden aumentar en función a particularidades específicas de cada caso.",
+]
+
+const stepsDonation = [
+  "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu negocio jurídico de donación de inmuebles sea seguro.",
+  "Lexdata Services revisa toda la documentación y la organiza sistemáticamente.",
+  "Ejecuta el proceso de catastro en el Municipio pertinente y coordina el pago de todos los impuestos.",
+  "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del cliente.", 
+  "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
+  "Coordina la declaración de impuestos a la donación ante el Servicio de Rentas Internas.",
+  "Procesa la inscripción en el Registro de la Propiedad.",
+  "Te entrega tus documentos en el lugar que elijas.",
+] 
+
+const requirementsPartition = [
+  "Certificado de gravámenes de los inmuebles a partirse y adjudicarse conferido por los Registros de la Propiedad de los cantones donde están ubicados.",
+  "Pago de los impuestos prediales actualizados y/o fichas catastrales de los inmuebles.",
+  "Pagos de los impuestos de alcabalas, plusvalía, obras y demás adicionales conforme al cantón en donde se ubica el inmueble.",
+  "Documentación de identificación de las partes.",
+  "Los requisitos pueden aumentar en función a particularidades específicas de cada caso."
+]
+
+const stepsPartition = [
+  "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu negocio jurídico de donación de inmuebles sea seguro.",
+  "Lexdata Services revisa toda la documentación y la organiza sistemáticamente.",
+  "Ejecuta el proceso de catastro en el Municipio pertinente y coordina el pago de todos los impuestos.",
+  "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del cliente.",
+  "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
+  "Procesa la inscripción en el Registro de la Propiedad.",
+  "Te entrega tus documentos en el lugar que elijas."
+]
+
+---
+
+<Layout>
+  <PageContent requirements={requirementsTrading} steps={stepsTrading} image="salida-menores" title=`compraventa`/>
+  <PageContent requirements={requirementsTradingPromise} steps={stepsTradingPromise} image="salida-menores" title=`promesa de <br /> compraventa`/>
+  <PageContent requirements={requirementsDonation} steps={stepsDonation} image="salida-menores" title=`donación`/>
+  <PageContent requirements={requirementsPartition} steps={stepsPartition} image="salida-menores" title=`partición y <br /> adjudicación`/>
+</Layout>

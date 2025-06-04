@@ -15,3 +15,10 @@
 @theme {
   --font-montserrat: "Montserrat", "sans-serif"; 
 }
+
+@layer utilities {
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}

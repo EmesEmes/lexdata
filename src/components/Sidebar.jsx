@@ -14,11 +14,11 @@ const Sidebar = () => {
   ];
 
   const submenuItems = [
-    'BIENES RAÍCES O INMOBILIARIO',
-    'PODERES',
-    'SOCIETARIO',
-    'SALIDAS MENORES',
-    'ESCRITURAS ELECTRÓNICAS'
+    {page: 'BIENES RAICES O INMOBILIARIO', href: '/bienes-raices-inmobiliario'},
+    {page: 'PODERES', href: '/poderes'},
+    {page: 'SOCIETARIO', href: '/societario'},
+    {page: 'SALIDAS MENORES', href: '/salida-de-menores'},
+    {page: 'ESCRITURAS ELECTRÓNICAS', href: '/escrituras-electronicas'}
   ];
 
   // Detectar clics fuera del submenu
@@ -130,16 +130,14 @@ const Sidebar = () => {
         <div className="p-6">
           <div className="space-y-3">
             {submenuItems.map((item, index) => (
-              <button
+              <a href={item.href}>
+                <button
                 key={index}
-                className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 hover:border-amber-400 hover:shadow-md ${
-                  item === 'SALIDAS MENORES'
-                    ? 'border-amber-400 bg-amber-50 text-emerald-700 font-semibold'
-                    : 'border-amber-200 bg-stone-50 text-stone-700 hover:bg-amber-50'
-                }`}
+                className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 hover:border-amber-400 hover:shadow-md 'border-amber-400 bg-amber-50 text-emerald-700 font-semibold`}
               >
-                {item}
+                {item.page}
               </button>
+              </a>
             ))}
           </div>
         </div>

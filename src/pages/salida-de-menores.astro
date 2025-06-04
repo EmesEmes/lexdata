@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageContent from "../components/PageContent.astro"
+import BottomBanner from "../components/BottomBanner.astro";
+
+const requirements =[
+  "Documentación de identificación de los padres y de los menores."
+]
+
+const steps = [
+  "Contactas con Lexdata Services y te asesoramos en todo lo necesario para obtener la autorización de salida del país de tus hijos menores de edad de forma segura.",
+  "El equipo de abogados patrocina tu petición conforme a la legislación ecuatoriana y los requerimientos específicos del o los clientes.",
+  "Coordina con notarías especializadas el otorgamiento del acta notarial de autorización de salida del país.",
+  "Te entrega tus documentos en el lugar que elijas."
+]
+---
+
+<Layout>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title=`salida<br/>menores`/>
+</Layout>
+<BottomBanner />
