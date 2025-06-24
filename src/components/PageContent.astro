@@ -16,10 +16,16 @@ const t = translations[lang];
 ---
 
 <section class="container mx-auto mt-10">
-  <div class="md:w-[70%] mx-auto lg:flex lg:items-end gap-1 p-4">
-    <div class="h-auto">
+   <div class="md:w-[70%] md:mx-auto flex flex-col md:flex-row md:items-end gap-1 md:p-4">
+     <div class="h-auto hidden lg:block">
       <p
-        class="lg:writing-vertical text-gray text-2xl lg:text-6xl tracking-[1rem] uppercase md:rotate-180"
+        class="writing-vertical text-gray text-6xl tracking-[1rem] uppercase rotate-180"
+        set:html={title}
+      />
+    </div>
+    <div class="h-auto md:hidden p-4">
+      <p
+        class="text-gray text-3xl tracking-[1rem] uppercase"
         set:html={title}
       />
     </div>
@@ -35,8 +41,8 @@ const t = translations[lang];
   <slot />
   <div class="mt-10 p-4 lg:w-[70%] lg:mx-auto lg:grid lg:grid-cols-2 lg:p-0">
     <div class="p-4">
-      <p class="text-3xl text-gray lg:text-right">{t.requirements}</p>
-      <ul class="list-disc mt-4 text-gray lg:text-right">
+      <p class="text-3xl text-green lg:text-right">{t.requirements}</p>
+      <ul class="list-disc mt-4 text-black lg:text-right">
         {
           requirements.map((requirement: string) => (
             <li>
@@ -47,8 +53,8 @@ const t = translations[lang];
       </ul>
     </div>
     <div class="p-4 border-l-2 border-dotted ml-4">
-      <p class="text-3xl text-gray text-left pl-6">{t.procedure}</p>
-      <ul class="list-disc mt-4 text-gray text-left pl-6">
+      <p class="text-3xl text-green text-left pl-6">{t.procedure}</p>
+      <ul class="list-disc mt-4 text-black text-left pl-6">
         {
           steps.map((step: string) => (
             <li>

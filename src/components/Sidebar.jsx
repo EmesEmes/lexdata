@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Home, Menu, MessageSquare, Phone } from 'lucide-react';
 
 const Sidebar = () => {
@@ -10,8 +10,7 @@ const Sidebar = () => {
   const menuItems = [
     { id: 'home', href: '/', icon: Home, label: 'HOME', labelEs: 'INICIO' },
     { id: 'menu', icon: Menu, label: 'MENU', labelEs: 'MENÚ' },
-    { id: 'chat', href: '/chat', icon: MessageSquare, label: 'CHAT', labelEs: 'CHAT' },
-    { id: 'contact', href: '/contact', icon: Phone, label: 'CONTACT', labelEs: 'CONTACTO' }
+    { id: 'chat', href: 'https://api.whatsapp.com/send/?phone=593993536395&text=%C2%A1Hola%21+Estoy+visitando+su+sitio+web+y+deseo+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0', icon: MessageSquare, label: 'CHAT', labelEs: 'CHAT' },
   ];
 
   const submenuItems = [
@@ -84,7 +83,13 @@ const Sidebar = () => {
     }
   };
 
+  // Función corregida para manejar URLs externas
   const getLocalizedHref = (item) => {
+    // Si la URL es externa (contiene http:// o https://), devolverla tal como está
+    if (item.href.startsWith('http://') || item.href.startsWith('https://')) {
+      return item.href;
+    }
+    // Si es una ruta interna, aplicar la localización
     return currentLanguage === 'en' ? '/en' + item.href : item.href;
   };
 
@@ -124,7 +129,8 @@ const Sidebar = () => {
             if (item.id !== 'menu' && typeof window !== 'undefined') {
               const path = window.location.pathname;
               const localizedHref = getLocalizedHref(item);
-              if (path === localizedHref) {
+              // Solo comparar con rutas internas
+              if (!item.href.startsWith('http') && path === localizedHref) {
                 isActive = true;
               }
             }
