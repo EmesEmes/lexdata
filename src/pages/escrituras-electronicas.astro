@@ -7,8 +7,8 @@ const requirements = [
   "Documentación de identificación de quienes soliciten el servicio.",
   "Una de las partes debe estar en el cantón de la Notaría con la que se va a coordinar el documento.",
   "Todas las partes deben disponer de firmas electrónicas validables en el programa FIRMAEC de Ecuador.",
-  "Existen requisitos específicos por cada tipo de trámite."
-]
+  "Existen requisitos específicos por cada tipo de trámite.",
+];
 
 const steps = [
   "Contactas con Lexdata Services y te asesoramos e inclusive te capacitamos en todo lo necesario para procesar tu requerimiento.",
@@ -16,18 +16,34 @@ const steps = [
   "El equipo de abogados patrocina tu petición conforme a la legislación ecuatoriana y los requerimientos específicos del o los clientes.",
   "Coordina con notarías muy especializadas en la prestación de servicios por medios telemáticos, digitales y electrónicos.",
   "Obtenidos los testimonios electrónicos de tus escrituras y si necesitares que se te emitan en soporte papel, coordinamos esa forma de despacho. ",
-]
-
+];
 ---
 
 <Layout title="Escrituras Electrónicas | Lexdata">
-  <PageContent requirements={requirements} steps={steps} image="escrituraelectronica" title=`escrituras<br/>electrónicas`>
+  <PageContent
+    requirements={requirements}
+    steps={steps}
+    image="escrituraelectronica"
+    title=`escrituras<br/>electrónicas`
+  >
     <div class="container mx-auto mt-10">
-    <div class="w-[70%] mx-auto flex flex-col gap-6">
-      <p class="font-bold">Una de las divisiones más importantes de Lexdata Services es la que se encarga de patrocinar el otorgamiento de escrituras públicas mediante comparecencia telemática y con firmas electrónicas. </p>
-      <p class="font-bold">Los clientes que más necesitan de este servicio son quienes se encuentran fuera del país y el acto más ejecutado son los poderes en sus versiones generales, especiales o procuraciones judiciales. Por su puesto que también por esta modalidad se pueden realizar todo tipo de transferencias de dominio a cualquier título, esto es compraventas, donaciones, etc., trámites en los que innovadores en los que somos pioneros.</p>
+      <div class="w-[70%] mx-auto flex flex-col gap-6">
+        <p>
+          Una de las divisiones más importantes de Lexdata Services es la que se
+          encarga de patrocinar el otorgamiento de escrituras públicas mediante
+          comparecencia telemática y con firmas electrónicas.
+        </p>
+        <p>
+          Los clientes que más necesitan de este servicio son quienes se
+          encuentran fuera del país y el acto más ejecutado son los poderes en
+          sus versiones generales, especiales o procuraciones judiciales. Por su
+          puesto que también por esta modalidad se pueden realizar todo tipo de
+          transferencias de dominio a cualquier título, esto es compraventas,
+          donaciones, etc., trámites en los que innovadores en los que somos
+          pioneros.
+        </p>
+      </div>
     </div>
-  </div>
   </PageContent>
   <BottomBanner />
 </Layout>

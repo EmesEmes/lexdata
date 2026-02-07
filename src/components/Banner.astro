@@ -1,9 +1,17 @@
 ---
-const {image} = Astro.props
+const { image } = Astro.props;
 ---
 
 <div class="relative">
-  <img src=`/images/${image}` alt="banner image" class="mt-10 h-96 w-screen object-cover object-center">
-   <div class="absolute inset-0 bg-black/40"></div>
-  <img src="/lexdata-logo-horizontal-white.svg" alt="lexdata logo" class="absolute top-10 left-10 w-2xs">
+  <img
+    src=`/images/${image}`
+    alt="banner image"
+    class="mt-10 h-96 w-screen object-cover object-center"
+  />
+  <div class="absolute inset-0 bg-black/40"></div>
+  <img
+    src="/lexdata-logo-horizontal-white.svg"
+    alt="lexdata logo"
+    class="absolute top-10 left-10 w-2xs"
+  />
 </div>

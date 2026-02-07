@@ -2,10 +2,10 @@
 import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 import Sidebar from "../components/Sidebar";
-import MobileMenu from "../components/MobileMenu"
+import MobileMenu from "../components/MobileMenu";
 import Footer from "../components/Footer.astro";
+import WhatsappButton from "../components/WhatsAppButton.astro";
 const { title } = Astro.props;
-
 ---
 
 <!doctype html>
@@ -25,22 +25,23 @@ const { title } = Astro.props;
           <!-- <div>
             <img src="/x.svg" alt="x icon" class="w-10" />
           </div> -->
-          <div>
+          <!-- <div>
             <img src="/wp.svg" alt="whatsapp icon" class="w-10" />
-          </div>
+          </div> -->
         </div>
-        <div>
+        <!-- <div>
           <img src="/lexdata-logo.svg" alt="lexdata logo" class="w-2xs" />
-        </div>
+        </div> -->
       </div>
     </div>
     <div>
-      <MobileMenu client:only="react"/>
+      <MobileMenu client:only="react" />
     </div>
     <div class="max-md:hidden">
       <Sidebar client:only="react" />
     </div>
     <slot />
+    <WhatsappButton />
     <Footer />
   </body>
 </html>
