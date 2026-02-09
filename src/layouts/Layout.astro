@@ -5,33 +5,95 @@ import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
 import Footer from "../components/Footer.astro";
 import WhatsappButton from "../components/WhatsAppButton.astro";
-const { title } = Astro.props;
+import StructuredData from "../components/StructuredData.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  noindex?: boolean;
+  alternateES?: string;
+  alternateEN?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  serviceName?: string;
+  serviceDescription?: string;
+}
+
+const {
+  title,
+  description = "Lexdata Services: firma ecuatoriana de consultoría legal especializada en bienes raíces, poderes, escrituras electrónicas, salida de menores y derecho societario.",
+  ogImage = "/images/columns.webp",
+  canonicalURL,
+  noindex = false,
+  alternateES,
+  alternateEN,
+  breadcrumbs,
+  serviceName,
+  serviceDescription,
+} = Astro.props;
+
+const SITE_URL = "https://lexdataservices.com";
+const detectedLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
+const currentURL = canonicalURL || new URL(Astro.url.pathname, SITE_URL).href;
+const ogImageURL = new URL(ogImage, SITE_URL).href;
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/en';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={detectedLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={currentURL} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#2E6A2D" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content={detectedLang === 'en' ? 'en_US' : 'es_EC'} />
+    <meta property="og:site_name" content="Lexdata Services" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Hreflang -->
+    {alternateES && <link rel="alternate" hreflang="es" href={new URL(alternateES, SITE_URL).href} />}
+    {alternateEN && <link rel="alternate" hreflang="en" href={new URL(alternateEN, SITE_URL).href} />}
+    {alternateES && alternateEN && <link rel="alternate" hreflang="x-default" href={new URL(alternateES, SITE_URL).href} />}
+
+    <!-- Font Preload -->
+    <link rel="preload" href="/fonts/Montserrat/Montserrat.ttf" as="font" type="font/ttf" crossorigin />
+
+    <!-- Structured Data -->
+    <StructuredData
+      isHome={isHome}
+      lang={detectedLang}
+      breadcrumbs={breadcrumbs}
+      serviceName={serviceName}
+      serviceDescription={serviceDescription}
+    />
+
     <ClientRouter />
   </head>
   <body class="bg-primary-background overflow-x-hidden">
     <div class="hidden md:block container mx-auto p-6">
       <div class="flex items-center justify-between">
         <div class="flex gap-8">
-          <!-- <div>
-            <img src="/x.svg" alt="x icon" class="w-10" />
-          </div> -->
-          <!-- <div>
-            <img src="/wp.svg" alt="whatsapp icon" class="w-10" />
-          </div> -->
         </div>
-        <!-- <div>
-          <img src="/lexdata-logo.svg" alt="lexdata logo" class="w-2xs" />
-        </div> -->
       </div>
     </div>
     <div>

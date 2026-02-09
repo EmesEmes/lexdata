@@ -1,17 +1,20 @@
 ---
-const { image } = Astro.props;
+const { image, alt } = Astro.props;
+const imageAlt = alt || `Lexdata Services - ${image}`;
 ---
 
 <div class="relative">
   <img
     src=`/images/${image}`
-    alt="banner image"
+    alt={imageAlt}
     class="mt-10 h-96 w-screen object-cover object-center"
+    loading="lazy"
   />
   <div class="absolute inset-0 bg-black/40"></div>
   <img
     src="/lexdata-logo-horizontal-white.svg"
-    alt="lexdata logo"
+    alt="Lexdata Services logo"
     class="absolute top-10 left-10 w-2xs"
+    loading="lazy"
   />
 </div>

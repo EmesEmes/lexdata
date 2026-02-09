@@ -37,9 +37,17 @@ const stepsSocieties = [
 
 ---
 
-<Layout title="Societario | Lexdata">
-  <PageContent requirements={requirements} steps={steps} image="companias" title="constitución<br/> de compañias limitadas"/>
-  <PageContent requirements={requirements} steps={steps} image="companias" title="constitución<br/>de compañias anónimas"/>
-  <PageContent requirements={requirementsSocieties} steps={stepsSocieties} image="companias" title="constitución<br/> de sociedades<br/>civiles y comerciales"/>
+<Layout
+  title="Derecho Societario | Lexdata Services"
+  description="Constitución de compañías limitadas, anónimas y sociedades civiles y comerciales en Ecuador. Inscripción en Registro Mercantil incluida."
+  alternateES="/societario"
+  alternateEN="/en/societario"
+  breadcrumbs={[{ name: "Inicio", url: "/" }, { name: "Societario", url: "/societario" }]}
+  serviceName="Derecho Societario"
+  serviceDescription="Constitución de compañías limitadas, anónimas y sociedades civiles y comerciales en Ecuador."
+>
+  <PageContent requirements={requirements} steps={steps} image="companias" title="constitución<br/> de compañias limitadas" alt="Constitución de compañía limitada en Ecuador"/>
+  <PageContent requirements={requirements} steps={steps} image="companias" title="constitución<br/>de compañias anónimas" alt="Constitución de compañía anónima en Ecuador"/>
+  <PageContent requirements={requirementsSocieties} steps={stepsSocieties} image="companias" title="constitución<br/> de sociedades<br/>civiles y comerciales" alt="Constitución de sociedades civiles y comerciales"/>
   <BottomBanner />
 </Layout>

@@ -1,5 +1,5 @@
 ---
-const {requirements, steps, image, title } = Astro.props
+const { requirements, steps, image, title, alt } = Astro.props;
 const translations = {
   es: {
     requirements: "Requisitos",
@@ -13,18 +13,19 @@ const translations = {
 
 const lang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
 const t = translations[lang];
+const imageAlt = alt || title.replace(/<br\s*\/?>/g, ' ');
 ---
 
 <section class="container mx-auto mt-10">
    <div class="md:w-[70%] md:mx-auto flex flex-col md:flex-row md:items-end gap-1 md:p-4">
      <div class="h-auto hidden lg:block">
-      <p
+      <h1
         class="writing-vertical text-gray text-6xl tracking-[1rem] uppercase rotate-180"
         set:html={title}
       />
     </div>
     <div class="h-auto md:hidden p-4">
-      <p
+      <h1
         class="text-gray text-3xl tracking-[1rem] uppercase"
         set:html={title}
       />
@@ -33,8 +34,9 @@ const t = translations[lang];
     <div>
       <img
         src=`/images/${image}.webp`
-        alt="salidas menores"
+        alt={imageAlt}
         class="max-w-full h-auto object-cover"
+        loading="lazy"
       />
     </div>
   </div>
@@ -66,4 +68,3 @@ const t = translations[lang];
     </div>
   </div>
 </section>
-

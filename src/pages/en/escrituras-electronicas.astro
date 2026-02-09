@@ -20,8 +20,16 @@ const steps = [
 
 ---
 
-<Layout>
-  <PageContent requirements={requirements} steps={steps} image="salida-menores" title=`Electronic<br/>deeds`>
+<Layout
+  title="Electronic Deeds | Lexdata Services"
+  description="Public deeds via remote appearance and electronic signatures in Ecuador. Perfect for Ecuadorians living abroad needing notarial services."
+  alternateES="/escrituras-electronicas"
+  alternateEN="/en/escrituras-electronicas"
+  breadcrumbs={[{ name: "Home", url: "/en/" }, { name: "Electronic Deeds", url: "/en/escrituras-electronicas" }]}
+  serviceName="Electronic Deeds"
+  serviceDescription="Public deeds via remote appearance and electronic signatures in Ecuador."
+>
+  <PageContent requirements={requirements} steps={steps} image="escrituraelectronica" title=`Electronic<br/>deeds` alt="Electronic public deed signing process">
     <div class="container mx-auto mt-10">
     <div class="w-[70%] mx-auto flex flex-col gap-6">
       <p class="font-bold">One of the most important divisions of Lexdata Services is the one that sponsors the granting of public deeds through remote appearance and electronic signatures. </p>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Home, MessageSquare, Phone } from 'lucide-react';
+import { Home, MessageSquare } from 'lucide-react';
 
 const MobileMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,13 +22,14 @@ const MobileMenu = () => {
     }
   };
 
-  const getLocalizedHref = (href) =>
-    currentLanguage === 'en' ? '/en' + href : href;
+  const getLocalizedHref = (href) => {
+    if (href.startsWith('http://') || href.startsWith('https://')) return href;
+    return currentLanguage === 'en' ? '/en' + href : href;
+  };
 
   const menuItems = [
     { href: '/', icon: Home, label: 'HOME', labelEs: 'INICIO' },
-    { href: '/chat', icon: MessageSquare, label: 'CHAT', labelEs: 'CHAT' },
-    { href: '/contact', icon: Phone, label: 'CONTACT', labelEs: 'CONTACTO' }
+    { href: 'https://api.whatsapp.com/send/?phone=593980285306&text=%C2%A1Hola%21+Estoy+visitando+su+sitio+web+y+deseo+m%C3%A1s+informaci%C3%B3n&type=phone_number&app_absent=0', icon: MessageSquare, label: 'CHAT', labelEs: 'CHAT' },
   ];
 
   const submenuItems = [

@@ -4,62 +4,104 @@ import PageContent from "../components/PageContent.astro";
 import Layout from "../layouts/Layout.astro";
 
 const requirementSpecials = [
-  "Documentación de identificación del mandante y mandatario."
-]
+  "Documentación de identificación del mandante y mandatario.",
+];
 
 const stepsSpecials = [
   "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu requerimiento sea proyectado de forma segura.",
   "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del cliente.",
   "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
-  "Te entrega tus documentos en el lugar que elijas."
-]
+  "Te entrega tus documentos en el lugar que elijas.",
+];
 
 const requirementsGeneral = [
-  "Documentación de identificación del mandante y mandatario."
-]
+  "Documentación de identificación del mandante y mandatario.",
+];
 
 const stepsGeneral = [
   "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu requerimiento sea proyectado de forma segura.",
   "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del cliente.",
   "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
-  "Te entrega tus documentos en el lugar que elijas."
-]
+  "Te entrega tus documentos en el lugar que elijas.",
+];
 
 const requirements = [
-  "Documentación de identificación del mandante y mandatario."
-]
+  "Documentación de identificación del mandante y mandatario.",
+];
 
 const steps = [
   "Contactas con Lexdata Services y te asesoramos en todo lo necesario para lograr que tu requerimiento sea proyectado de forma segura.",
   "El equipo de abogados patrocina tu minuta conforme a la legislación ecuatoriana y los requerimientos específicos del cliente.",
   "Coordina con notarías especializadas el otorgamiento de la escritura pública.",
-  "Te entrega tus documentos en el lugar que elijas."
-]
+  "Te entrega tus documentos en el lugar que elijas.",
+];
 ---
 
-<Layout title="Poderes | Lexdata">
-  <PageContent requirements={requirementSpecials} steps={stepsSpecials} image="poderjudicial" title=`poderes<br/>especiales`>
+<Layout
+  title="Poderes Especiales, Generales y Procuración Judicial | Lexdata Services"
+  description="Gestión de poderes especiales, generales y procuración judicial ante notarías en Ecuador. Asesoría legal personalizada y entrega a domicilio."
+  alternateES="/poderes"
+  alternateEN="/en/poderes"
+  breadcrumbs={[
+    { name: "Inicio", url: "/" },
+    { name: "Poderes", url: "/poderes" },
+  ]}
+  serviceName="Poderes y Mandatos"
+  serviceDescription="Gestión de poderes especiales, generales y procuración judicial ante notarías en Ecuador."
+>
+  <PageContent
+    requirements={requirementSpecials}
+    steps={stepsSpecials}
+    image="poder-especial"
+    title=`poderes<br/>especiales`
+    alt="Gestión de poderes especiales ante notaría"
+  >
     <div class="container mx-auto mt-10">
-    <div class="w-[70%] mx-auto">
-      <p class="ont-bold">Son utilizados para que una persona natural o jurídica de confianza del mandante ejecute en su nombre actos y contratos específicos como la venta o compra de bienes inmuebles, automotores, solicite posesiones efectivas y en fin ejecute una gran variedad de gestiones.</p>
+      <div class="w-[70%] mx-auto">
+        <p class="font-bold">
+          Son utilizados para que una persona natural o jurídica de confianza
+          del mandante ejecute en su nombre actos y contratos específicos como
+          la venta o compra de bienes inmuebles, automotores, solicite
+          posesiones efectivas y en fin ejecute una gran variedad de gestiones.
+        </p>
+      </div>
     </div>
-  </div>
   </PageContent>
 
-  <PageContent requirements={requirementsGeneral} steps={stepsGeneral} image="poderjudicial" title=`poderes<br/>generales`>
+  <PageContent
+    requirements={requirementsGeneral}
+    steps={stepsGeneral}
+    image="poder-general"
+    title=`poderes<br/>generales`
+    alt="Otorgamiento de poderes generales en Ecuador"
+  >
     <div class="container mx-auto mt-10">
-    <div class="w-[70%] mx-auto">
-      <p class="font-bold">Es un tipo de poder especial o general según el caso que se otorga exclusivamente en favor de abogados a fin de que representen al mandante en procesos judiciales y/o administrativos.</p>
+      <div class="w-[70%] mx-auto">
+        <p class="font-bold">
+          Es un tipo de poder especial o general según el caso que se otorga
+          exclusivamente en favor de abogados a fin de que representen al
+          mandante en procesos judiciales y/o administrativos.
+        </p>
+      </div>
     </div>
-  </div>
   </PageContent>
 
-  <PageContent requirements={requirementsGeneral} steps={stepsGeneral} image="poderjudicial" title=`procuración<br/>judicial`>
+  <PageContent
+    requirements={requirements}
+    steps={steps}
+    image="poderjudicial"
+    title=`procuración<br/>judicial`
+    alt="Procuración judicial para representación legal"
+  >
     <div class="container mx-auto mt-10">
-    <div class="w-[70%] mx-auto">
-      <p class="font-bold">Es un tipo de poder especial o general según el caso que se otorga exclusivamente en favor de abogados a fin de que representen al mandante en procesos judiciales y/o administrativos.</p>
+      <div class="w-[70%] mx-auto">
+        <p class="font-bold">
+          Es un tipo de poder especial o general según el caso que se otorga
+          exclusivamente en favor de abogados a fin de que representen al
+          mandante en procesos judiciales y/o administrativos.
+        </p>
+      </div>
     </div>
-  </div>
   </PageContent>
   <BottomBanner />
 </Layout>

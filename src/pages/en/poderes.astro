@@ -4,52 +4,92 @@ import PageContent from "../../components/PageContent.astro";
 import Layout from "../../layouts/Layout.astro";
 
 const requirementSpecials = [
-  "Identification documents of the principal and the agent."
-]
+  "Identification documents of the principal and the agent.",
+];
 
 const stepsSpecials = [
   "Contact Lexdata Services for comprehensive advice to ensure your request is securely drafted.",
   "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.",
   "Coordinates with specialized notaries for the granting of the public deed.",
-  "Delivers your documents to the location of your choice."
-]
+  "Delivers your documents to the location of your choice.",
+];
 
 const requirementsGeneral = [
-  "Identification documents of the principal and the agent."
-]
+  "Identification documents of the principal and the agent.",
+];
 
 const stepsGeneral = [
   "Contact Lexdata Services for comprehensive advice to ensure your request is securely drafted.",
   "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.",
   "Coordinates with specialized notaries for the granting of the public deed.",
-  "Delivers your documents to the location of your choice."
-]
-
+  "Delivers your documents to the location of your choice.",
+];
 ---
 
-<Layout>
-  <PageContent requirements={requirementSpecials} steps={stepsSpecials} image="salida-menores" title=`special<br/>powers`>
+<Layout
+  title="Powers of Attorney in Ecuador | Lexdata Services"
+  description="Special powers, general powers, and judicial procuration in Ecuador. Expert legal advice and document delivery anywhere in the world."
+  alternateES="/poderes"
+  alternateEN="/en/poderes"
+  breadcrumbs={[
+    { name: "Home", url: "/en/" },
+    { name: "Powers of Attorney", url: "/en/poderes" },
+  ]}
+  serviceName="Powers of Attorney"
+  serviceDescription="Special powers, general powers, and judicial procuration services in Ecuador."
+>
+  <PageContent
+    requirements={requirementSpecials}
+    steps={stepsSpecials}
+    image="poder-especial"
+    title=`special<br/>powers`
+    alt="Special power of attorney notarization"
+  >
     <div class="container mx-auto mt-10">
-    <div class="w-[70%] mx-auto">
-      <p class="ont-bold">These are used to authorize a trusted individual or entity to perform specific acts and contracts on behalf of the principal, such as buying or selling real estate, vehicles, requesting probate proceedings, and various other procedures.</p>
+      <div class="w-[70%] mx-auto">
+        <p class="font-bold">
+          These are used to authorize a trusted individual or entity to perform
+          specific acts and contracts on behalf of the principal, such as buying
+          or selling real estate, vehicles, requesting probate proceedings, and
+          various other procedures.
+        </p>
+      </div>
     </div>
-  </div>
   </PageContent>
 
-  <PageContent requirements={requirementsGeneral} steps={stepsGeneral} image="salida-menores" title=`general<br/>powers`>
+  <PageContent
+    requirements={requirementsGeneral}
+    steps={stepsGeneral}
+    image="poder-general"
+    title=`general<br/>powers`
+    alt="General power of attorney in Ecuador"
+  >
     <div class="container mx-auto mt-10">
-    <div class="w-[70%] mx-auto">
-      <p class="ont-bold">These are used to authorize a trusted individual or entity to manage general administrative acts on behalf of the principal.</p>
+      <div class="w-[70%] mx-auto">
+        <p class="font-bold">
+          These are used to authorize a trusted individual or entity to manage
+          general administrative acts on behalf of the principal.
+        </p>
+      </div>
     </div>
-  </div>
   </PageContent>
 
-  <PageContent requirements={requirementsGeneral} steps={stepsGeneral} image="salida-menores" title=`juditial<br/>procuration`>
+  <PageContent
+    requirements={requirementsGeneral}
+    steps={stepsGeneral}
+    image="poderjudicial"
+    title=`judicial<br/>procuration`
+    alt="Judicial procuration for legal representation"
+  >
     <div class="container mx-auto mt-10">
-    <div class="w-[70%] mx-auto">
-      <p class="ont-bold">This is a type of special or general power granted exclusively to attorneys to represent the principal in judicial and/or administrative proceedings.</p>
+      <div class="w-[70%] mx-auto">
+        <p class="font-bold">
+          This is a type of special or general power granted exclusively to
+          attorneys to represent the principal in judicial and/or administrative
+          proceedings.
+        </p>
+      </div>
     </div>
-  </div>
   </PageContent>
   <BottomBanner />
 </Layout>

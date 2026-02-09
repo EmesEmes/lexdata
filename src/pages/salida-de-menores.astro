@@ -15,7 +15,15 @@ const steps = [
 ]
 ---
 
-<Layout title="Salida de Menores | Lexdata">
-  <PageContent requirements={requirements} steps={steps} image="salida-menores" title=`salida<br/>menores`/>
+<Layout
+  title="Permiso de Salida de Menores del País | Lexdata Services"
+  description="Autorización notarial de salida del país para menores de edad en Ecuador. Trámite seguro, rápido y con entrega de documentos a domicilio."
+  alternateES="/salida-de-menores"
+  alternateEN="/en/salida-de-menores"
+  breadcrumbs={[{ name: "Inicio", url: "/" }, { name: "Salida de Menores", url: "/salida-de-menores" }]}
+  serviceName="Salida de Menores"
+  serviceDescription="Autorización notarial de salida del país para menores de edad en Ecuador."
+>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title=`salida<br/>menores` alt="Autorización de salida del país para menores de edad"/>
   <BottomBanner />
 </Layout>

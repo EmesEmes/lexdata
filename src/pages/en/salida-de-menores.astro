@@ -15,7 +15,15 @@ const steps = [
 ]
 ---
 
-<Layout>
-  <PageContent requirements={requirements} steps={steps} image="salida-menores" title=`minor's exit<br/>permits`/>
+<Layout
+  title="Minor Exit Permits from Ecuador | Lexdata Services"
+  description="Notarial authorization for minors to travel internationally from Ecuador. Secure processing and document delivery to your location."
+  alternateES="/salida-de-menores"
+  alternateEN="/en/salida-de-menores"
+  breadcrumbs={[{ name: "Home", url: "/en/" }, { name: "Minor Exit Permits", url: "/en/salida-de-menores" }]}
+  serviceName="Minor Exit Permits"
+  serviceDescription="Notarial authorization for minors to travel internationally from Ecuador."
+>
+  <PageContent requirements={requirements} steps={steps} image="salida-menores" title=`minor's exit<br/>permits` alt="Minor exit permit authorization in Ecuador"/>
+  <BottomBanner />
 </Layout>
-<BottomBanner />

@@ -28,7 +28,6 @@ const stepsSocieties = [
   "Our legal team drafts your deed in accordance with Ecuadorian legislation and your specific requirements.",
   "Coordinates the publication of the incorporation extract in a digital medium.",
   "Coordinates the notarial approval of the company's incorporation.",
-  "Coordina la aprobación notarial de la constitución de la empresa.",
   "Processes the registration in the Mercantile Registry of the company's domicile.",
   "Delivers your documents to the location of your choice."
 ]
@@ -37,9 +36,17 @@ const stepsSocieties = [
 
 ---
 
-<Layout>
-  <PageContent requirements={requirements} steps={steps} image="salida-menores" title="incorporation of<br/>limited liability companies"/>
-  <PageContent requirements={requirements} steps={steps} image="salida-menores" title="incorporation of<br/>corporations"/>
-  <PageContent requirements={requirementsSocieties} steps={stepsSocieties} image="salida-menores" title="incorporation of civil<br/>and commercial partnerships"/>
+<Layout
+  title="Corporate Law in Ecuador | Lexdata Services"
+  description="Incorporation of limited companies, corporations, and civil and commercial partnerships in Ecuador. Mercantile Registry inscription included."
+  alternateES="/societario"
+  alternateEN="/en/societario"
+  breadcrumbs={[{ name: "Home", url: "/en/" }, { name: "Corporate Law", url: "/en/societario" }]}
+  serviceName="Corporate Law"
+  serviceDescription="Incorporation of limited companies, corporations, and civil and commercial partnerships in Ecuador."
+>
+  <PageContent requirements={requirements} steps={steps} image="companias" title="incorporation of<br/>limited liability companies" alt="Limited liability company incorporation in Ecuador"/>
+  <PageContent requirements={requirements} steps={steps} image="companias" title="incorporation of<br/>corporations" alt="Corporation incorporation in Ecuador"/>
+  <PageContent requirements={requirementsSocieties} steps={stepsSocieties} image="companias" title="incorporation of civil<br/>and commercial partnerships" alt="Civil and commercial partnership formation"/>
   <BottomBanner />
 </Layout>

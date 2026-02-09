@@ -1,0 +1,74 @@
+---
+interface Props {
+  isHome?: boolean;
+  lang?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  serviceName?: string;
+  serviceDescription?: string;
+}
+
+const { isHome = false, lang = 'es', breadcrumbs, serviceName, serviceDescription } = Astro.props;
+const SITE_URL = "https://lexdataservices.com";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LegalService"],
+  "name": "Lexdata Services",
+  "url": SITE_URL,
+  "logo": `${SITE_URL}/lexdata-logo.svg`,
+  "description": lang === 'en'
+    ? "Ecuadorian legal consulting firm designed for the digital age."
+    : "Firma ecuatoriana de consultoría legal concebida para la era digital.",
+  "telephone": "+593980285306",
+  "email": "info@lexdataservices.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "EC"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+593993536395",
+    "contactType": "customer service",
+    "availableLanguage": ["Spanish", "English"]
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Lexdata Services",
+  "url": SITE_URL,
+  "inLanguage": ["es", "en"]
+};
+
+const breadcrumbSchema = breadcrumbs ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": crumb.name,
+    "item": new URL(crumb.url, SITE_URL).href
+  }))
+} : null;
+
+const serviceSchema = (serviceName && serviceDescription) ? {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": serviceName,
+  "provider": {
+    "@type": "LegalService",
+    "name": "Lexdata Services"
+  },
+  "description": serviceDescription,
+  "areaServed": {
+    "@type": "Country",
+    "name": "Ecuador"
+  }
+} : null;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+{isHome && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}
+{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+{serviceSchema && <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />}

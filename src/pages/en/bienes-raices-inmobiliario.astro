@@ -77,10 +77,18 @@ const stepsPartition = [
 
 ---
 
-<Layout title="Real State | Lexdata">
-  <PageContent requirements={requirementsTrading} steps={stepsTrading} image="salida-menores" title=`purchase </br> and sale`/>
-  <PageContent requirements={requirementsTradingPromise} steps={stepsTradingPromise} image="salida-menores" title=`promise </br> of sale`/>
-  <PageContent requirements={requirementsDonation} steps={stepsDonation} image="salida-menores" title=`donation`/>
-  <PageContent requirements={requirementsPartition} steps={stepsPartition} image="salida-menores" title=`partition and <br/> adjudication`/>
+<Layout
+  title="Real Estate Services in Ecuador | Lexdata Services"
+  description="Purchase, sale, donation, and partition of real estate in Ecuador. Full management of deeds, taxes, and property registry inscription."
+  alternateES="/bienes-raices-inmobiliario"
+  alternateEN="/en/bienes-raices-inmobiliario"
+  breadcrumbs={[{ name: "Home", url: "/en/" }, { name: "Real Estate", url: "/en/bienes-raices-inmobiliario" }]}
+  serviceName="Real Estate Services"
+  serviceDescription="Purchase, sale, donation, and partition of real estate properties in Ecuador."
+>
+  <PageContent requirements={requirementsTrading} steps={stepsTrading} image="compraventa" title=`purchase <br/> and sale` alt="Real estate purchase and sale documents in Ecuador"/>
+  <PageContent requirements={requirementsTradingPromise} steps={stepsTradingPromise} image="bienesraices" title=`promise <br/> of sale` alt="Promise of sale agreement for real estate"/>
+  <PageContent requirements={requirementsDonation} steps={stepsDonation} image="donacion" title=`donation` alt="Property donation process in Ecuador"/>
+  <PageContent requirements={requirementsPartition} steps={stepsPartition} image="casa" title=`partition and <br/> adjudication` alt="Property partition and adjudication"/>
   <BottomBanner/>
 </Layout>

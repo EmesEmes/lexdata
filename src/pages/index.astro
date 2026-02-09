@@ -1,5 +1,4 @@
 ---
-// import Welcome from '../components/Welcome.astro';
 import Banner from "../components/Banner.astro";
 import BottomBanner from "../components/BottomBanner.astro";
 import Layout from "../layouts/Layout.astro";
@@ -8,25 +7,34 @@ import Layout from "../layouts/Layout.astro";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Inicio | Lexdata">
-  <div class="mt-10">
-    <img src="/images/columns.webp" alt="columns image" />
+<Layout
+  title="Lexdata Services | Consultoría Legal en Ecuador"
+  description="Firma ecuatoriana de consultoría legal digital. Soluciones en bienes raíces, poderes, escrituras electrónicas, salida de menores y derecho societario."
+  alternateES="/"
+  alternateEN="/en/"
+  breadcrumbs={[{ name: "Inicio", url: "/" }]}
+>
+  <div>
+    <img
+      src="/images/columns.webp"
+      alt="Columnas clásicas representando la solidez del derecho"
+    />
   </div>
 
-  <main class="mt-10 md:w-[70%] mx-auto w-screen p-4">
+  <main class="mt-10 md:w-[70%] mx-auto w-full p-4">
     <div class="w-full text-center max-md:hidden">
       <h1
-        class="flex justify-between text-4xl uppercase text-green tracking-[0.15em] w-full mx-auto"
+        class="flex justify-between text-6xl uppercase text-green tracking-[0.15em] w-full mx-auto"
       >
         <span>T</span>
         <span>U</span>
-        <span class="ml-12">A</span>
+        <span class="ml-20">A</span>
         <span>L</span>
         <span>I</span>
         <span>A</span>
         <span>D</span>
         <span>O</span>
-        <span class="ml-12">E</span>
+        <span class="ml-20">E</span>
         <span>S</span>
         <span>T</span>
         <span>R</span>
@@ -39,11 +47,11 @@ import Layout from "../layouts/Layout.astro";
         <span>O</span>
       </h1>
       <h2
-        class="flex justify-between text-sm uppercase tracking-[0.25em] text-green w-full mx-auto"
+        class="flex justify-between text-2xl uppercase tracking-[0.25em] text-green w-full mx-auto"
       >
         <span>E</span>
         <span>N</span>
-        <span class="ml-12">S</span>
+        <span class="ml-20">S</span>
         <span>O</span>
         <span>L</span>
         <span>U</span>
@@ -54,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
         <span>E</span>
         <span>S</span>
 
-        <span class="ml-12">J</span>
+        <span class="ml-20">J</span>
         <span>U</span>
         <span>R</span>
         <span>Í</span>
@@ -64,7 +72,7 @@ import Layout from "../layouts/Layout.astro";
         <span>A</span>
         <span>S</span>
 
-        <span class="ml-8">I</span>
+        <span class="ml-20">I</span>
         <span>N</span>
         <span>T</span>
         <span>E</span>
@@ -76,9 +84,9 @@ import Layout from "../layouts/Layout.astro";
         <span>S</span>
       </h2>
     </div>
-    <div class="text-center uppercase text-3xl text-gray md:hidden">
+    <div class="text-center uppercase text-3xl text-green md:hidden">
       <h2>Tu aliado estratégico</h2>
-      <h3>En solucione jurídicas</h3>
+      <h3>En soluciones jurídicas integrales</h3>
     </div>
     <div
       class="mt-12 border-l-[6px] border-[#98A97C] pl-6 max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed"
@@ -103,7 +111,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </main>
 
-  <Banner image={"lawyers.webp"} />
+  <Banner image={"lawyers.webp"} alt="Equipo de abogados de Lexdata Services" />
   <section class="mt-10">
     <div class="container mx-auto">
       <div class="p-4 md:w-[70%] md:mx-auto">
@@ -152,10 +160,13 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </section>
-  <Banner image={"catalejo.webp"} />
-  <section class="mt-10">
+  <Banner
+    image={"catalejo.webp"}
+    alt="Visión estratégica de Lexdata Services"
+  />
+  <div class="mt-10">
     <div class="container mx-auto">
-      <div class="w-screen p-6 md:w-[70%] md:mx-auto md:p-0">
+      <div class="w-full p-6 md:w-[70%] md:mx-auto md:p-0">
         <h3 class="text-4xl text-green uppercase">Visión</h3>
         <p class="text-black mt-2">
           En un mundo en constante evolución impulsado por las tecnologías de la
@@ -166,17 +177,17 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <div class="container mx-auto mt-10">
-      <div class="w-[70%] mx-auto max-md:w-screen max-md:p-4">
+      <div class="w-[70%] mx-auto max-md:w-full max-md:p-4">
         <div class="flex flex-col md:flex-row items-center">
           <div
-            class="border-l-8 border-l-olive p-4 md:w-[30%] w-screen flex flex-col items-end text-4xl text-olive"
+            class="border-l-8 border-l-olive p-4 md:w-[30%] w-full flex flex-col items-end text-4xl text-olive"
           >
             <div>¿QUÉ</div>
             <div>NOS</div>
             <div>DIFERENCIA?</div>
           </div>
           <hr class="border-t-3 border-dotted w-26 rotate-90 max-md:hidden" />
-          <div class="w-screen p-4 md:w-[50%] md:p-0">
+          <div class="w-full p-4 md:w-[50%] md:p-0">
             <p class="leading-relaxed">
               En Lexdata Services, integramos la experiencia jurídica
               tradicional con soluciones tecnológicas avanzadas, ofreciendo un
@@ -190,18 +201,14 @@ import Layout from "../layouts/Layout.astro";
             ¡Confía en Lexdata Services y asegura tu éxito en la era digital con
             un soporte tradicional!
           </p>
-          <div
-            class="hidden md:block absolute top-0 left-full w-screen bg-olive inset-0"
-          >
-          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
   <BottomBanner />
 
   <section class="container mx-auto mt-20">
-    <div class="mx-auto w-screen p-4 md:w-[70%] md:p-0">
+    <div class="mx-auto w-full p-4 md:w-[70%] md:p-0">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 w-fit">
           <p class="text-4xl text-left">
@@ -214,10 +221,6 @@ import Layout from "../layouts/Layout.astro";
         >
           <p class="text-olive text-2xl">593-980285306</p>
           <p class="text-olive text-2xl">info@lexdataservices.com</p>
-          <div class="flex gap-x-4">
-            <!-- <img src="/x.svg" alt="x icon"> -->
-            <img src="/wp.svg" alt="whatsapp icon" />
-          </div>
         </div>
       </div>
     </div>

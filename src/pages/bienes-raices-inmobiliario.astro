@@ -77,10 +77,18 @@ const stepsPartition = [
 
 ---
 
-<Layout title="Biene Raíces e Inmobiliario | Lexdata">
-  <PageContent requirements={requirementsTrading} steps={stepsTrading} image="compraventa" title=`compraventa`/>
-  <PageContent requirements={requirementsTradingPromise} steps={stepsTradingPromise} image="bienesraices" title=`promesa de <br /> compraventa`/>
-  <PageContent requirements={requirementsDonation} steps={stepsDonation} image="donacion" title=`donación`/>
-  <PageContent requirements={requirementsPartition} steps={stepsPartition} image="casa" title=`partición y <br /> adjudicación`/>
+<Layout
+  title="Bienes Raíces e Inmobiliario | Lexdata Services"
+  description="Compraventa, promesas, donaciones y particiones de inmuebles en Ecuador. Gestión integral de escrituras, impuestos e inscripción registral."
+  alternateES="/bienes-raices-inmobiliario"
+  alternateEN="/en/bienes-raices-inmobiliario"
+  breadcrumbs={[{ name: "Inicio", url: "/" }, { name: "Bienes Raíces", url: "/bienes-raices-inmobiliario" }]}
+  serviceName="Servicios Inmobiliarios"
+  serviceDescription="Compraventa, promesa de compraventa, donación, partición y adjudicación de bienes inmuebles en Ecuador."
+>
+  <PageContent requirements={requirementsTrading} steps={stepsTrading} image="compraventa" title=`compraventa` alt="Documentos de compraventa de inmuebles en Ecuador"/>
+  <PageContent requirements={requirementsTradingPromise} steps={stepsTradingPromise} image="bienesraices" title=`promesa de <br /> compraventa` alt="Firma de promesa de compraventa inmobiliaria"/>
+  <PageContent requirements={requirementsDonation} steps={stepsDonation} image="donacion" title=`donación` alt="Proceso de donación de bienes inmuebles"/>
+  <PageContent requirements={requirementsPartition} steps={stepsPartition} image="casa" title=`partición y <br /> adjudicación` alt="Partición y adjudicación de propiedades"/>
   <BottomBanner />
 </Layout>

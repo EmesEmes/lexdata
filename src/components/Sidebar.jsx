@@ -192,12 +192,14 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              <button className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-stone-300">
-                <Globe size={20} />
-                <span className="text-2xl">
-                  {currentLanguage === "es" ? "TELEMATICOS" : "SERVICES"}
-                </span>
-              </button>
+              <a href={currentLanguage === "es" ? "/escrituras-electronicas" : "/en/escrituras-electronicas"}>
+                <button className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-stone-300">
+                  <Globe size={20} />
+                  <span className="text-2xl">
+                    {currentLanguage === "es" ? "TELEMÁTICOS" : "ELECTRONIC DEEDS"}
+                  </span>
+                </button>
+              </a>
             </div>
 
             {/* Language Toggle & Mobile Menu Button */}

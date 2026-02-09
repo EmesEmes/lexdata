@@ -4,19 +4,30 @@ import BottomBanner from "../../components/BottomBanner.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Home | Lexdata">
-  <div class="mt-10">
-    <img src="/images/columns.webp" alt="columns image" />
+<Layout
+  title="Lexdata Services | Legal Consulting in Ecuador"
+  description="Ecuadorian legal consulting firm for the digital age. Real estate, powers of attorney, electronic deeds, minor exit permits, and corporate law."
+  alternateES="/"
+  alternateEN="/en/"
+  breadcrumbs={[{ name: "Home", url: "/en/" }]}
+>
+  <div>
+    <img
+      src="/images/columns.webp"
+      alt="Classical columns representing the strength of law"
+    />
   </div>
 
-  <main class="mt-10 md:w-[70%] mx-auto w-screen p-4">
+  <main class="mt-10 md:w-[70%] mx-auto w-full p-4">
     <div class="w-full text-center max-md:hidden">
-      <h1 class="flex justify-between text-4xl uppercase text-gray tracking-[0.15em] w-full mx-auto">
+      <h1
+        class="flex justify-between text-6xl uppercase text-green tracking-[0.15em] w-full mx-auto"
+      >
         <span>Y</span>
         <span>O</span>
         <span>U</span>
         <span>R</span>
-        <span class="ml-12">S</span>
+        <span class="ml-20">S</span>
         <span>T</span>
         <span>R</span>
         <span>A</span>
@@ -25,15 +36,17 @@ import Layout from "../../layouts/Layout.astro";
         <span>G</span>
         <span>I</span>
         <span>C</span>
-        <span class="ml-12">A</span>
+        <span class="ml-20">A</span>
         <span>L</span>
         <span>L</span>
         <span>Y</span>
       </h1>
-      <h2 class="flex justify-between text-sm uppercase tracking-[0.25em] text-gray w-full mx-auto">
+      <h2
+        class="flex justify-between text-2xl uppercase tracking-[0.25em] text-green w-full mx-auto"
+      >
         <span>I</span>
         <span>N</span>
-        <span class="ml-12">C</span>
+        <span class="ml-20">C</span>
         <span>O</span>
         <span>M</span>
         <span>P</span>
@@ -47,13 +60,13 @@ import Layout from "../../layouts/Layout.astro";
         <span>V</span>
         <span>E</span>
 
-        <span class="ml-12">L</span>
+        <span class="ml-20">L</span>
         <span>E</span>
         <span>G</span>
         <span>A</span>
         <span>L</span>
 
-        <span class="ml-8">S</span>
+        <span class="ml-20">S</span>
         <span>O</span>
         <span>L</span>
         <span>U</span>
@@ -64,30 +77,48 @@ import Layout from "../../layouts/Layout.astro";
         <span>S</span>
       </h2>
     </div>
-    <div class="text-center uppercase text-3xl text-gray md:hidden">
+    <div class="text-center uppercase text-3xl text-green md:hidden">
       <h2>Your Strategic Ally</h2>
       <h3>In Legal Solutions</h3>
     </div>
-    <div class="mt-12 border-l-[6px] border-[#98A97C] pl-6 max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed">
-      <p>Lexdata Services is an Ecuadorian legal consulting firm designed for the digital age.</p>
+    <div
+      class="mt-12 border-l-[6px] border-[#98A97C] pl-6 max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed"
+    >
       <p>
-        We offer specialized, high-value legal solutions in real estate, notarial, municipal, and registry areas. Our expert advisory and legal representation services facilitate the formalization of public deeds, adapting to the needs of a dynamic and globalized market.
+        Lexdata Services is an Ecuadorian legal consulting firm designed for the
+        digital age.
       </p>
       <p>
-        With Lexdata Services, you receive personalized and efficient service. We simplify your procedures, coordinating each step with precision and punctuality. We free you from all queues and resolve any complications, delivering your documents anywhere in Ecuador or the world upon successful completion.
+        We offer specialized, high-value legal solutions in real estate,
+        notarial, municipal, and registry areas. Our expert advisory and legal
+        representation services facilitate the formalization of public deeds,
+        adapting to the needs of a dynamic and globalized market.
+      </p>
+      <p>
+        With Lexdata Services, you receive personalized and efficient service.
+        We simplify your procedures, coordinating each step with precision and
+        punctuality. We free you from all queues and resolve any complications,
+        delivering your documents anywhere in Ecuador or the world upon
+        successful completion.
       </p>
     </div>
   </main>
 
-  <Banner image={"lawyers.webp"} />
+  <Banner image={"lawyers.webp"} alt="Lexdata Services legal team" />
 
   <section class="mt-10">
     <div class="container mx-auto">
       <div class="p-4 md:w-[70%] md:mx-auto">
         <h3 class="text-4xl text-green uppercase">Mission</h3>
-        <p class="text-black mt-2">Do you seek security and peace of mind in legal decision-making?</p>
+        <p class="text-black mt-2">
+          Do you seek security and peace of mind in legal decision-making?
+        </p>
         <p class="mt-10 text-black">
-          At Lexdata Services, our mission is to provide you with the legal certainty you need to make informed and strategic decisions. We combine deep legal knowledge with a strong network of relationships, offering innovative, agile, and efficient solutions tailored to your specific requirements.
+          At Lexdata Services, our mission is to provide you with the legal
+          certainty you need to make informed and strategic decisions. We
+          combine deep legal knowledge with a strong network of relationships,
+          offering innovative, agile, and efficient solutions tailored to your
+          specific requirements.
         </p>
       </div>
     </div>
@@ -96,62 +127,80 @@ import Layout from "../../layouts/Layout.astro";
         <p class="mb-4 font-bold">Our specialization encompasses:</p>
         <ul class="list-disc flex flex-col gap-4">
           <li class="text-black/50">
-            <span class="font-bold text-black">Real Estate: </span>We ensure the profitability and legality of your real estate investments through comprehensive and expert management.
+            <span class="font-bold text-black">Real Estate: </span>We ensure the
+            profitability and legality of your real estate investments through
+            comprehensive and expert management.
           </li>
           <li class="text-black/50">
-            <span class="font-bold text-black">Mandates and Powers of Attorney: </span>We protect your interests and guarantee the fulfillment of your intentions, providing precise and reliable legal advice.
+            <span class="font-bold text-black"
+              >Mandates and Powers of Attorney:
+            </span>We protect your interests and guarantee the fulfillment of
+            your intentions, providing precise and reliable legal advice.
           </li>
           <li class="text-black/50">
-            <span class="font-bold text-black">Family Law: </span>We support you with sensitivity and professionalism in resolving family conflicts. For your travels, we manage exit permits for your minor children, prioritizing your family’s well-being.
+            <span class="font-bold text-black">Family Law: </span>We support you
+            with sensitivity and professionalism in resolving family conflicts.
+            For your travels, we manage exit permits for your minor children,
+            prioritizing your family’s well-being.
           </li>
           <li class="text-black/50">
-            <span class="font-bold text-black">Corporate Law: </span>We advise you clearly on business models and sponsor the corporate structure that best suits your needs, whether it's a limited company, corporation, or civil and commercial partnership.
+            <span class="font-bold text-black">Corporate Law: </span>We advise
+            you clearly on business models and sponsor the corporate structure
+            that best suits your needs, whether it's a limited company,
+            corporation, or civil and commercial partnership.
           </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <Banner image={"catalejo.webp"} />
+  <Banner image={"catalejo.webp"} alt="Lexdata Services strategic vision" />
 
   <section class="mt-10">
     <div class="container mx-auto">
-      <div class="w-screen p-6 md:w-[70%] md:mx-auto md:p-0">
+      <div class="w-full p-6 md:w-[70%] md:mx-auto md:p-0">
         <h3 class="text-4xl text-green uppercase">Vision</h3>
         <p class="text-black mt-2">
-          In a constantly evolving world driven by information technologies, Lexdata Services positions itself as your strategic ally. Our goal is to facilitate the agile, efficient, and effective legal implementation of your business in this new scenario.
+          In a constantly evolving world driven by information technologies,
+          Lexdata Services positions itself as your strategic ally. Our goal is
+          to facilitate the agile, efficient, and effective legal implementation
+          of your business in this new scenario.
         </p>
       </div>
     </div>
     <div class="container mx-auto mt-10">
-      <div class="w-[70%] mx-auto max-md:w-screen max-md:p-4">
+      <div class="w-[70%] mx-auto max-md:w-full max-md:p-4">
         <div class="flex flex-col md:flex-row items-center">
-          <div class="border-l-8 border-l-olive p-4 md:w-[30%] w-screen flex flex-col items-end text-4xl text-olive">
+          <div
+            class="border-l-8 border-l-olive p-4 md:w-[30%] w-full flex flex-col items-end text-4xl text-olive"
+          >
             <div>WHAT</div>
             <div>SETS US</div>
             <div>APART?</div>
           </div>
           <hr class="border-t-3 border-dotted w-26 rotate-90 max-md:hidden" />
-          <div class="w-screen p-4 md:w-[50%] md:p-0">
+          <div class="w-full p-4 md:w-[50%] md:p-0">
             <p class="leading-relaxed">
-              At Lexdata Services, we integrate traditional legal experience with advanced technological solutions, offering personalized and optimized service, ensuring maximum security and efficiency in all your operations.
+              At Lexdata Services, we integrate traditional legal experience
+              with advanced technological solutions, offering personalized and
+              optimized service, ensuring maximum security and efficiency in all
+              your operations.
             </p>
           </div>
         </div>
         <div class="p-4 rounded-2xl md:rounded-none bg-olive relative">
           <p class="text-white text-4xl h-auto">
-            Trust Lexdata Services and secure your success in the digital age with traditional support!
+            Trust Lexdata Services and secure your success in the digital age
+            with traditional support!
           </p>
-          <div class="hidden md:block absolute top-0 left-full w-screen bg-olive inset-0"></div>
         </div>
       </div>
     </div>
   </section>
-
   <BottomBanner />
 
   <section class="container mx-auto mt-20">
-    <div class="mx-auto w-screen p-4 md:w-[70%] md:p-0">
+    <div class="mx-auto w-full p-4 md:w-[70%] md:p-0">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 w-fit">
           <p class="text-4xl text-left">
@@ -159,13 +208,11 @@ import Layout from "../../layouts/Layout.astro";
           </p>
         </div>
         <hr class="border-t-4 border-dotted w-40 rotate-90 max-md:hidden" />
-        <div class="md:w-1/2 w-full flex flex-col items-center max-md:mt-6 justify-between gap-y-6">
-          <p class="text-olive text-2xl">593-987654321</p>
-          <p class="text-olive text-2xl">consultas@lexdata.com</p>
-          <div class="flex gap-x-4">
-            <img src="/x.svg" alt="x icon" />
-            <img src="/wp.svg" alt="whatsapp icon" />
-          </div>
+        <div
+          class="md:w-1/2 w-full flex flex-col items-center max-md:mt-6 justify-between gap-y-6"
+        >
+          <p class="text-olive text-2xl">593-980285306</p>
+          <p class="text-olive text-2xl">info@lexdataservices.com</p>
         </div>
       </div>
     </div>
