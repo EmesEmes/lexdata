@@ -15,6 +15,7 @@ const Navbar = () => {
       icon: MessageSquare,
       label: "CHAT",
       labelEs: "CHAT",
+      newTab: true,
     },
   ];
 
@@ -151,7 +152,12 @@ const Navbar = () => {
                 }
 
                 return (
-                  <a href={localizedHref} key={item.id}>
+                  <a
+                    href={localizedHref}
+                    key={item.id}
+                    target={item.newTab ? "_blank" : "_self"}
+                    rel={item.newTab ? "noopener noreferrer" : undefined}
+                  >
                     <button
                       onClick={() => setActiveItem(item.id)}
                       className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-stone-300`}
@@ -192,11 +198,19 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              <a href={currentLanguage === "es" ? "/escrituras-electronicas" : "/en/escrituras-electronicas"}>
+              <a
+                href={
+                  currentLanguage === "es"
+                    ? "/escrituras-electronicas"
+                    : "/en/escrituras-electronicas"
+                }
+              >
                 <button className="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-stone-300">
                   <Globe size={20} />
                   <span className="text-2xl">
-                    {currentLanguage === "es" ? "TELEMÁTICOS" : "ELECTRONIC DEEDS"}
+                    {currentLanguage === "es"
+                      ? "TELEMÁTICOS"
+                      : "ELECTRONIC DEEDS"}
                   </span>
                 </button>
               </a>
@@ -251,7 +265,12 @@ const Navbar = () => {
             const localizedHref = getLocalizedHref(item);
 
             return (
-              <a href={localizedHref} key={item.id}>
+              <a
+                href={localizedHref}
+                key={item.id}
+                target={item.newTab ? "_blank" : "_self"}
+                rel={item.newTab ? "noopener noreferrer" : undefined}
+              >
                 <button
                   onClick={() => {
                     setActiveItem(item.id);
